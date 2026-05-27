@@ -103,6 +103,7 @@ nav{
 }
 .handle .platform{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--soft)}
 
+/* cover box / ref grid */
 .cover-box{
   padding:24px;
   border:1px solid var(--border);
@@ -115,15 +116,21 @@ nav{
   gap:8px;margin-top:14px;
 }
 .tile{
-  aspect-ratio:1/1;border-radius:14px;padding:12px;
+  aspect-ratio:1/1;border-radius:14px;padding:10px;
   background:linear-gradient(160deg,#050507,#1e1830 55%,#514a88);
   border:1px solid rgba(255,255,255,.08);
-  display:flex;align-items:flex-end;
-  font-weight:900;line-height:.96;
-  font-size:clamp(11px,1.4vw,20px);
-  word-break:break-word;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;
 }
-.tile span{color:var(--purple)}
+.tile .t-label{
+  font-size:9px;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--soft);margin-bottom:4px;
+}
+.tile .t-handle{
+  font-size:clamp(10px,1.1vw,13px);font-weight:800;
+  color:var(--text);line-height:1.15;word-break:break-all;
+}
+.tile .t-handle span{color:var(--purple)}
 
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;backdrop-filter:blur(10px)}
@@ -249,14 +256,32 @@ footer{padding:36px 20px;text-align:center;color:var(--soft);font-size:13px;bord
       </div>
     </div>
     <div class="cover-box">
-      <div class="small">DA de référence</div>
+      <div class="small">Comptes de référence</div>
       <div class="mockfeed">
-        <div class="tile">NO ONE<br><span>CARES</span></div>
-        <div class="tile">YOU <span>DON'T</span><br>NEED MORE</div>
-        <div class="tile">NEED<br><span>MORE?</span></div>
-        <div class="tile">CONTENT<br><span>CONVERTS</span></div>
-        <div class="tile">CONSIS<br><span>TENCY</span></div>
-        <div class="tile">3 APPS<br><span>TO GROW</span></div>
+        <div class="tile">
+          <div class="t-label">Inspi visuelle</div>
+          <div class="t-handle"><span>@jonanthony</span>james</div>
+        </div>
+        <div class="tile">
+          <div class="t-label">Cinéma &amp; voyage</div>
+          <div class="t-handle"><span>@chris</span>bizet</div>
+        </div>
+        <div class="tile">
+          <div class="t-label">PVT France</div>
+          <div class="t-handle"><span>@mylittle</span>france.au</div>
+        </div>
+        <div class="tile">
+          <div class="t-label">Backpacker FR</div>
+          <div class="t-handle"><span>@depart</span>australie</div>
+        </div>
+        <div class="tile">
+          <div class="t-label">Instagram client</div>
+          <div class="t-handle"><span>@e</span>.pnl</div>
+        </div>
+        <div class="tile">
+          <div class="t-label">TikTok client</div>
+          <div class="t-handle"><span>@enzo</span>.panuela</div>
+        </div>
       </div>
     </div>
   </div>
@@ -360,10 +385,10 @@ footer{padding:36px 20px;text-align:center;color:var(--soft);font-size:13px;bord
       <table>
         <thead><tr><td>Compte / Type</td><td>Ce qu'il fait bien</td><td>Leçon pour Enzo</td></tr></thead>
         <tbody>
-          <tr><td>Jonanthony James</td><td>Met l'accent sur l'émotion et le "feeling of being there".</td><td>Chercher l'expérience ressentie, pas seulement la beauté du lieu.</td></tr>
-          <tr><td>Chris Bizet</td><td>Voyage filmé de manière simple, honnête et très cinématique.</td><td>Garder un ton vrai, sans surjouer la performance créateur.</td></tr>
-          <tr><td>My Little France Australie</td><td>Aide à préparer le départ, répond à des questions PVT concrètes.</td><td>Ajouter de la valeur pratique dans certains contenus.</td></tr>
-          <tr><td>departaustralie</td><td>Positionnement utile, orienté problématiques backpackers.</td><td>Ne pas rester uniquement esthétique ; donner aussi des repères terrain.</td></tr>
+          <tr><td>@jonanthonyjames</td><td>Met l'accent sur l'émotion et le "feeling of being there".</td><td>Chercher l'expérience ressentie, pas seulement la beauté du lieu.</td></tr>
+          <tr><td>@chrisbizet</td><td>Voyage filmé de manière simple, honnête et très cinématique.</td><td>Garder un ton vrai, sans surjouer la performance créateur.</td></tr>
+          <tr><td>@mylittlefranceaustralie</td><td>Aide à préparer le départ, répond à des questions PVT concrètes.</td><td>Ajouter de la valeur pratique dans certains contenus.</td></tr>
+          <tr><td>@departaustralie</td><td>Positionnement utile, orienté problématiques backpackers.</td><td>Ne pas rester uniquement esthétique ; donner aussi des repères terrain.</td></tr>
         </tbody>
       </table>
     </div>
