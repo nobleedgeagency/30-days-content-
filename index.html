@@ -3,449 +3,469 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Enzo Panuela — 30 Day Content Plan | Noble Edge</title>
+<title>30 Days Content — Noble Edge × Enzo Panuela</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0f0d16;
-  --bg2:#151126;
-  --bg3:#27243b;
-  --card:rgba(255,255,255,.035);
-  --card2:rgba(255,255,255,.05);
+  --bg:#0f0d16;--bg2:#151126;
+  --card:rgba(255,255,255,.04);--card2:rgba(255,255,255,.07);
   --border:rgba(255,255,255,.08);
-  --text:#f7f7f7;
-  --muted:#cbc7df;
-  --soft:#8d87a3;
-  --purple:#5f5896;
-  --purple2:#7468ff;
-  --purple3:#8b84d7;
-  --ok:#7fe0b8;
-  --warn:#ffd36c;
-  --shadow:0 24px 60px rgba(0,0,0,.28);
+  --text:#f7f7f7;--muted:#cbc7df;--soft:#8d87a3;
+  --purple:#7468ff;--shadow:0 24px 60px rgba(0,0,0,.28);
 }
 *{box-sizing:border-box}
-html,body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(135deg,var(--bg),var(--bg2));color:var(--text);overflow-x:hidden}
-body{letter-spacing:-0.01em}
-.deck{position:relative;width:100%}
-.slide{display:none;min-height:100vh;padding:46px 54px 100px;overflow:visible;background:
-radial-gradient(900px 500px at 92% 88%, rgba(116,104,255,.22), transparent 30%),
-radial-gradient(700px 380px at 8% 10%, rgba(95,88,150,.18), transparent 28%),
-linear-gradient(135deg, #0f0d16 0%, #120f1c 42%, #1d1931 100%)}
-.slide.active{display:block}
-.slide:before{content:'';position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(255,255,255,.02),rgba(255,255,255,0));mask-image:linear-gradient(to bottom, rgba(0,0,0,.6), transparent 24%);-webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.6), transparent 24%)}
-.wrap{max-width:1220px;margin:0 auto}
-.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;gap:12px}
-.brand{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(116,104,255,.32);background:rgba(116,104,255,.08);padding:8px 14px;border-radius:999px;color:#d9d6ff;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-.small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
-h1,h2,h3,h4,p{margin:0}
-h1{font-size:78px;line-height:.92;font-weight:900;letter-spacing:-0.05em}
-h2{font-size:48px;line-height:.94;font-weight:850;letter-spacing:-0.04em}
-h3{font-size:24px;line-height:1.05;font-weight:800}
-p{color:var(--muted);line-height:1.6}
-.hero-sub{font-size:20px;max-width:760px;margin-top:18px}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(135deg,var(--bg),var(--bg2));color:var(--text);overflow-x:hidden;letter-spacing:-.01em}
+h1,h2,h3,p{margin:0}
+h1{font-size:clamp(36px,7vw,82px);line-height:.92;font-weight:900;letter-spacing:-.05em}
+h2{font-size:clamp(26px,4vw,52px);line-height:.95;font-weight:900;letter-spacing:-.04em}
+p{color:var(--muted);line-height:1.65;font-size:clamp(14px,1.3vw,17px)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+.section:first-child{padding-top:0}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(15,13,22,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:14px 24px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;border:1px solid rgba(116,104,255,.32);background:rgba(116,104,255,.08);padding:7px 14px;border-radius:999px;color:#d9d6ff;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap}
+.nav-links a{font-size:12px;color:var(--soft);padding:6px 12px;border-radius:999px;border:1px solid transparent;font-weight:600;letter-spacing:.04em;transition:all .2s}
+.nav-links a:hover{color:var(--text);border-color:var(--border);background:var(--card)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;align-items:center;padding:100px 24px 80px;background:
+  radial-gradient(900px 500px at 90% 15%, rgba(116,104,255,.22), transparent 30%),
+  radial-gradient(700px 380px at 8% 85%, rgba(95,88,150,.16), transparent 28%),
+  linear-gradient(135deg,#0f0d16 0%,#120f1c 42%,#1d1931 100%)}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-bottom:12px}
+.hero-sub{font-size:clamp(15px,1.6vw,20px);color:var(--muted);margin-top:18px;max-width:680px;line-height:1.55}
+.hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.cta{padding:11px 22px;border-radius:999px;border:1px solid rgba(116,104,255,.35);background:rgba(116,104,255,.14);color:#d9d6ff;font-weight:700;font-size:14px;cursor:pointer;transition:all .2s}
+.cta:hover{background:rgba(116,104,255,.26)}
+.cta.ghost{background:transparent;border-color:var(--border);color:var(--muted)}
+.cta.ghost:hover{background:var(--card);color:var(--text)}
+.cover-box{padding:28px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border-radius:28px;box-shadow:var(--shadow)}
+.mockfeed{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.tile{aspect-ratio:1/1;border-radius:16px;padding:14px;background:linear-gradient(160deg,#050507,#1e1830 55%,#514a88);border:1px solid rgba(255,255,255,.08);display:flex;align-items:flex-end;font-weight:900;line-height:.96;font-size:clamp(14px,1.6vw,22px)}
+.tile span{color:var(--purple)}
+
+/* STATS ROW */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:22px;backdrop-filter:blur(10px)}
+.metric{font-size:clamp(28px,3vw,42px);font-weight:900;color:var(--text);margin-bottom:6px}
+.accent{color:var(--purple)}
+.mini{font-size:12px;color:var(--soft);text-transform:uppercase;letter-spacing:.15em;margin-bottom:8px}
+
+/* GRID CARDS */
 .grid{display:grid;gap:18px}
 .g2{grid-template-columns:repeat(2,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
 .g4{grid-template-columns:repeat(4,1fr)}
-.card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:24px;box-shadow:var(--shadow);backdrop-filter:blur(10px)}
-.card.soft{background:var(--card2)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:24px;box-shadow:var(--shadow);backdrop-filter:blur(10px)}
+.card.hi{background:var(--card2)}
 .big{padding:30px}
-.metric{font-size:36px;font-weight:900;color:var(--text);margin-bottom:8px}
-.accent{color:var(--purple2)}
-.mini{font-size:13px;color:var(--soft);text-transform:uppercase;letter-spacing:.16em}
-.list{display:grid;gap:12px;margin-top:14px}
-.list div{padding-left:18px;position:relative;color:var(--muted);line-height:1.5}
-.list div:before{content:'';position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:var(--purple2)}
 .kicker{font-size:15px;font-weight:800;color:var(--text);margin-bottom:8px}
-.table{display:grid;border:1px solid var(--border);border-radius:24px;overflow:auto;background:var(--card);box-shadow:var(--shadow)}
-.t4{grid-template-columns:1.15fr .9fr .95fr 1.15fr}
-.t5{grid-template-columns:140px repeat(4,1fr)}
-.t6{grid-template-columns:repeat(6,1fr)}
-.cell{padding:15px 14px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);font-size:14px;line-height:1.45;color:var(--muted)}
-.table .cell:nth-child(4n){border-right:none}.t5 .cell:nth-child(5n){border-right:none}.t6 .cell:nth-child(6n){border-right:none}
-.head{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text);font-weight:800;background:rgba(255,255,255,.02)}
-.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(116,104,255,.12);border:1px solid rgba(116,104,255,.24);color:#dddafe;font-size:12px;font-weight:700}
-.quote{font-size:28px;line-height:1.2;font-weight:800;color:var(--text)}
-.split{display:grid;grid-template-columns:1.12fr .88fr;gap:22px;align-items:start}
-.cover-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:end;min-height:78vh}
-.cover-box{padding:28px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border-radius:28px;box-shadow:var(--shadow)}
-.mockfeed{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.tile{aspect-ratio:1/1;border-radius:16px;padding:16px;background:linear-gradient(160deg,#050507,#1e1830 55%,#514a88);border:1px solid rgba(255,255,255,.08);display:flex;align-items:flex-end;font-weight:900;line-height:.96;font-size:28px}
-.tile span{color:var(--purple2)}
-.section-gap{margin-top:22px}
-.roadmap{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.step{padding:18px;border-radius:20px;background:var(--card);border:1px solid var(--border)}
-.step .num{font-size:28px;font-weight:900;color:var(--purple2);margin-bottom:6px}
-.hooks{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
-.hook{padding:18px 20px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid var(--border);font-size:20px;font-weight:800;line-height:1.16}
-.highlight{color:var(--text);font-weight:700}
-.footer-note{margin-top:16px;color:var(--soft);font-size:13px}
-.nav{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:10px 16px;background:rgba(10,10,10,.72);border:1px solid rgba(255,255,255,.08);border-radius:999px;backdrop-filter:blur(12px);z-index:20}
-.btn{width:38px;height:38px;border:none;border-radius:50%;cursor:pointer;background:rgba(255,255,255,.06);color:var(--text);font-size:20px}
-.dots{display:flex;gap:7px;max-width:430px;flex-wrap:wrap;justify-content:center}
-.dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.18);cursor:pointer}
-.dot.active{background:var(--purple2)}
-.count{font-size:13px;color:var(--soft);min-width:58px;text-align:center}
-hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(116,104,255,.8),transparent);margin:22px 0}
+.list{display:grid;gap:10px;margin-top:14px}
+.list li{padding-left:18px;position:relative;color:var(--muted);line-height:1.5;list-style:none}
+.list li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--purple)}
+.quote{font-size:clamp(20px,2.4vw,28px);line-height:1.2;font-weight:800;color:var(--text)}
+.badge{display:inline-block;padding:6px 11px;border-radius:999px;background:rgba(116,104,255,.12);border:1px solid rgba(116,104,255,.24);color:#dddafe;font-size:12px;font-weight:700}
 
-/* === RESPONSIVE === */
-@media(max-width:980px){
-  .slide{padding:28px 20px 100px}
-  h1{font-size:46px} h2{font-size:34px} .quote{font-size:22px}
-  .cover-grid,.split,.g2,.g3,.g4,.roadmap,.hooks{grid-template-columns:1fr}
+/* SECTION HEADER */
+.sh{margin-bottom:32px}
+.sh .label{display:inline-block;margin-bottom:12px}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:22px;border:1px solid var(--border);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:var(--card);font-size:14px}
+thead td,thead th{background:rgba(255,255,255,.03);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text);font-weight:800;padding:14px 16px;border-bottom:1px solid var(--border)}
+tbody td{padding:14px 16px;color:var(--muted);border-bottom:1px solid var(--border);line-height:1.45;vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+
+/* HOOKS */
+.hooks{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.hook{padding:18px 20px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid var(--border);font-size:clamp(15px,1.7vw,20px);font-weight:800;line-height:1.18}
+
+/* ROADMAP */
+.roadmap{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.step{padding:20px;border-radius:20px;background:var(--card);border:1px solid var(--border)}
+.step .num{font-size:26px;font-weight:900;color:var(--purple);margin-bottom:6px}
+
+/* SEPARATOR */
+hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(116,104,255,.7),transparent);margin:0}
+
+/* FOOTER */
+footer{padding:40px 24px;text-align:center;color:var(--soft);font-size:13px;border-top:1px solid var(--border)}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .hero-inner,.g2,.g3,.g4,.roadmap,.hooks,.stats{grid-template-columns:1fr}
   .mockfeed{grid-template-columns:1fr 1fr}
-  .table{display:block;overflow-x:auto}
-  .t4,.t5,.t6{display:block;overflow-x:auto}
-  .cell{border-right:none}
 }
-@media(max-width:600px){
-  .slide{padding:18px 14px 90px}
-  h1{font-size:clamp(26px,8vw,40px)}
-  h2{font-size:clamp(20px,6vw,32px)}
-  h3{font-size:clamp(15px,4.5vw,22px)}
-  .hero-sub{font-size:14px}
+@media(max-width:640px){
+  .hero{padding:80px 14px 60px}
+  .wrap{padding:0 14px}
+  .section{padding:56px 0}
   .card{padding:16px;border-radius:16px}
   .big{padding:18px}
-  .metric{font-size:28px}
-  .topbar{flex-wrap:wrap;gap:8px}
-  .hook{font-size:16px}
-  .nav{
-    position:fixed;bottom:0;left:0;right:0;
-    transform:none;border-radius:0;
-    width:100%;justify-content:center;
-    padding:10px 8px;gap:6px
-  }
-  .btn{width:32px;height:32px;font-size:16px}
-  .dots{max-width:260px}
-  .dot{width:7px;height:7px}
-  .count{font-size:11px;min-width:44px}
+  .nav-links{display:none}
   .roadmap{grid-template-columns:1fr 1fr}
-  .tile{font-size:18px}
-}
-@media(max-width:380px){
-  .slide{padding:14px 10px 86px}
-  h1{font-size:24px}
-  h2{font-size:18px}
+  .tile{font-size:14px}
 }
 </style>
 </head>
 <body>
-<div class="deck">
 
-<section class="slide active">
-  <div class="wrap cover-grid">
+<nav>
+  <div class="nav-inner">
+    <div class="brand">@nobleedge.agency</div>
+    <div class="nav-links">
+      <a href="#resume">Résumé</a>
+      <a href="#brand">Brand DNA</a>
+      <a href="#piliers">Piliers</a>
+      <a href="#calendar">Calendrier</a>
+      <a href="#hooks">Hooks</a>
+      <a href="#kpis">KPIs</a>
+      <a href="#workflow">Workflow</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
     <div>
-      <div class="topbar"><div class="brand">@nobleedge.agency</div><div class="small">Final Strategy Deck · 30 days</div></div>
       <div class="small">Enzo Panuela · France-facing growth system</div>
-      <h1>30-Day Content<br>Growth Plan</h1>
-      <p class="hero-sub">Une stratégie éditoriale ultra précise pour faire grandir Instagram et TikTok avec une direction artistique cinématique, discrète et premium, cohérente avec l'univers Noble Edge.</p>
-      <hr class="sep">
-      <div class="grid g3">
-        <div class="card"><div class="mini">Objectif</div><div class="metric">30 jours</div><p>Installer une identité forte et produire des signaux clairs de croissance.</p></div>
-        <div class="card"><div class="mini">Marché</div><div class="metric">France</div><p>Audience francophone voyage, PVT, lifestyle visuel et découverte.</p></div>
-        <div class="card"><div class="mini">Angle</div><div class="metric">Cinematic</div><p>Peu de facecam, beaucoup d'atmosphère, de voix off et de détails.</p></div>
+      <h1>30-Day<br>Content<br>Growth Plan</h1>
+      <p class="hero-sub">Une stratégie éditoriale ultra précise pour faire grandir Instagram et TikTok avec une direction artistique cinématique, discrète et premium — cohérente avec l'univers Noble Edge.</p>
+      <div class="hero-cta">
+        <a class="cta" href="#resume">Voir la stratégie</a>
+        <a class="cta ghost" href="#calendar">Aller au calendrier</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="mini">Durée</div><div class="metric">30<span class="accent">j</span></div><p>Installer une identité forte.</p></div>
+        <div class="stat"><div class="mini">Marché</div><div class="metric accent">FR</div><p>Audience francophone voyage & PVT.</p></div>
+        <div class="stat"><div class="mini">Reels</div><div class="metric">12</div><p>3 par semaine.</p></div>
+        <div class="stat"><div class="mini">TikToks</div><div class="metric">12</div><p>Natifs ou adaptés.</p></div>
       </div>
     </div>
     <div class="cover-box">
       <div class="small">DA de référence</div>
-      <div class="mockfeed section-gap">
+      <div class="mockfeed">
         <div class="tile">NO ONE<br><span>CARES</span></div>
         <div class="tile">YOU <span>DON'T</span><br>NEED MORE</div>
-        <div class="tile">NEED<br><span>MORE</span> CLIENTS?</div>
+        <div class="tile">NEED<br><span>MORE?</span></div>
         <div class="tile">CONTENT THAT<br><span>CONVERTS</span></div>
-        <div class="tile">CONSISTENCY<br><span>BEATS</span></div>
-        <div class="tile">3 APPS TO<br><span>GROW</span></div>
+        <div class="tile">CONSIS<br><span>TENCY</span></div>
+        <div class="tile">3 APPS<br><span>TO GROW</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Executive Summary</div><div class="small">Slide 2</div></div>
-  <h2>Ce que ce plan doit produire en 30 jours</h2>
-  <div class="grid g2 section-gap">
-    <div class="card big"><div class="quote">Créer une présence immédiatement reconnaissable, pas juste publier plus.</div><div class="list"><div>Une DA stable et cohérente sur tous les formats.</div><div>Une grille de contenus répétable et mesurable.</div><div>Des sujets capables de générer sauvegardes, partages et abonnements.</div></div></div>
-    <div class="card big"><div class="quote">Passer d'un compte "beau" à un compte qui prend de la traction.</div><div class="list"><div>12 Reels Instagram.</div><div>12 TikToks adaptés ou natifs.</div><div>4 carrousels et stories quotidiennes.</div></div></div>
-  </div>
-</div></section>
+<hr class="sep">
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Brand DNA</div><div class="small">Slide 3</div></div>
-  <h2>ADN de marque pour Enzo</h2>
-  <div class="grid g3 section-gap">
-    <div class="card"><div class="kicker">Cinematic</div><p>Images lentes, respiration, lumière naturelle, cuts propres, sons ambiants.</p></div>
-    <div class="card"><div class="kicker">Quiet</div><p>Peu de visage, peu d'agitation, beaucoup de regard, d'espace et de détail.</p></div>
-    <div class="card"><div class="kicker">Premium</div><p>Rendu sombre, typographie forte, structure claire, exécution précise.</p></div>
-    <div class="card"><div class="kicker">Intentional</div><p>Chaque plan doit servir une sensation ou une idée, pas juste remplir.</p></div>
-    <div class="card"><div class="kicker">French-facing</div><p>Hooks, sous-titres et narration pensés pour une audience française.</p></div>
-    <div class="card"><div class="kicker">Journal-based</div><p>Vrai vécu de PVT, pas un simple décor de voyage générique.</p></div>
-  </div>
-</div></section>
-
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Audience</div><div class="small">Slide 4</div></div>
-  <h2>Audience cible et psychologie</h2>
-  <div class="split section-gap">
-    <div class="card big"><div class="mini">Profil principal</div><div class="list"><div>18-34 ans, France, Instagram et TikTok natifs.</div><div>Intérêt pour le voyage, l'Australie, le PVT, la liberté, la narration visuelle.</div><div>Sensibles aux contenus immersifs, aux phrases fortes et aux montages propres.</div></div></div>
-    <div class="card big"><div class="mini">Ce qu'ils veulent ressentir</div><div class="list"><div>Projection : "je pourrais vivre ça".</div><div>Inspiration : "ce compte me fait ressentir quelque chose".</div><div>Utilité : "ce contenu m'aide à comprendre la vraie vie sur place".</div></div></div>
-  </div>
-</div></section>
-
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Opportunity</div><div class="small">Slide 5</div></div>
-  <h2>Le problème n'est pas Atherton</h2>
-  <div class="grid g2 section-gap">
-    <div class="card big"><div class="quote">Le décor n'est pas l'avantage compétitif.</div><p class="section-gap">Le vrai différenciateur, c'est la capacité à rendre un lieu simple mémorable grâce au regard, au son, au rythme et au texte.</p></div>
-    <div class="card big"><div class="quote">Le compte doit vendre une perception.</div><p class="section-gap">Calme. Liberté. Discipline. Solitude choisie. Beauté discrète. C'est cette sensation qui devient la marque.</p></div>
-  </div>
-</div></section>
-
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Competitive Analysis</div><div class="small">Slide 6</div></div>
-  <h2>Benchmark 1 — Créateurs cinématiques</h2>
-  <div class="table t4 section-gap">
-    <div class="cell head">Compte</div><div class="cell head">Ce qu'il fait bien</div><div class="cell head">Force perçue</div><div class="cell head">Leçon pour Enzo</div>
-    <div class="cell">Jonanthony James</div><div class="cell">Met l'accent sur l'émotion, la sensation et le "feeling of being there".</div><div class="cell">Immersion forte.</div><div class="cell">Chercher l'expérience ressentie, pas seulement la beauté du lieu.</div>
-    <div class="cell">Chris Bizet</div><div class="cell">Voyage filmé de manière simple, honnête et très cinématique.</div><div class="cell">Sincérité premium.</div><div class="cell">Garder un ton vrai, sans surjouer la performance créateur.</div>
-    <div class="cell">Créateurs travel ciné</div><div class="cell">Très bons hooks visuels, ambiance, sound design.</div><div class="cell">Valeur d'image.</div><div class="cell">Soigner les 2 premières secondes et la chute.</div>
-  </div>
-  <div class="footer-note">Référence concurrentielle utilisée pour le positionnement, pas pour copier la forme exacte.</div>
-</div></section>
-
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Competitive Analysis</div><div class="small">Slide 7</div></div>
-  <h2>Benchmark 2 — Comptes PVT / utilité</h2>
-  <div class="table t4 section-gap">
-    <div class="cell head">Compte</div><div class="cell head">Ce qu'il fait bien</div><div class="cell head">Force perçue</div><div class="cell head">Leçon pour Enzo</div>
-    <div class="cell">My Little France Australie</div><div class="cell">Aide à préparer le départ et répond à des questions PVT concrètes.</div><div class="cell">Clarté.</div><div class="cell">Ajouter de la valeur pratique dans certains contenus.</div>
-    <div class="cell">departaustralie</div><div class="cell">Positionnement utile et orienté problématiques backpackers.</div><div class="cell">Pertinence directe.</div><div class="cell">Ne pas rester uniquement esthétique ; donner aussi des repères terrain.</div>
-    <div class="cell">Comptes PVT informatifs</div><div class="cell">Format simple, compréhensible, réassurant.</div><div class="cell">Saves élevés.</div><div class="cell">Produire des posts "à sauvegarder" une fois par semaine.</div>
-  </div>
-</div></section>
-
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Competitive Analysis</div><div class="small">Slide 8</div></div>
-  <h2>Ce que la concurrence fait bien</h2>
-  <div class="grid g3 section-gap">
-    <div class="card big"><div class="kicker">Émotion</div><p>Les créateurs cinématiques vendent une sensation forte, parfois plus que l'information elle-même.</p></div>
-    <div class="card big"><div class="kicker">Utilité</div><p>Les comptes PVT gagnent sur la clarté, les réponses concrètes et la capacité à rassurer.</p></div>
-    <div class="card big"><div class="kicker">Clarté de promesse</div><p>Les meilleurs comptes sont immédiatement compréhensibles dès le nom, le hook et la cover.</p></div>
-  </div>
-</div></section>
-
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Competitive Analysis</div><div class="small">Slide 9</div></div>
-  <h2>Leur limite = l'opportunité d'Enzo</h2>
-  <div class="grid g2 section-gap">
-    <div class="card big"><div class="quote">Les comptes utiles manquent souvent de désirabilité visuelle.</div><p class="section-gap">Ils informent bien, mais la marque n'imprime pas toujours émotionnellement.</p></div>
-    <div class="card big"><div class="quote">Les comptes très beaux manquent parfois d'ancrage concret.</div><p class="section-gap">Ils inspirent, mais donnent moins de repères tangibles sur la vie réelle en Australie.</p></div>
-  </div>
-</div></section>
-
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Positioning</div><div class="small">Slide 10</div></div>
-  <h2>Positionnement différenciant d'Enzo</h2>
-  <div class="card big section-gap">
-    <div class="quote">Cinematic PVT Diary for French viewers.</div>
-    <div class="grid g3 section-gap">
-      <div><span class="badge">Pas un vlog</span><p class="section-gap">On évite l'énergie "je raconte tout face caméra".</p></div>
-      <div><span class="badge">Pas un compte d'info pur</span><p class="section-gap">On ne devient pas une FAQ PVT impersonnelle.</p></div>
-      <div><span class="badge">Entre les deux</span><p class="section-gap">Image forte + vérité terrain + narration utile.</p></div>
+<!-- RÉSUMÉ -->
+<section class="section" id="resume">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">Executive Summary</span>
+      <h2>Ce que ce plan doit produire</h2>
+    </div>
+    <div class="grid g2">
+      <div class="card hi big">
+        <div class="quote">Créer une présence immédiatement reconnaissable, pas juste publier plus.</div>
+        <ul class="list">
+          <li>Une DA stable et cohérente sur tous les formats.</li>
+          <li>Une grille de contenus répétable et mesurable.</li>
+          <li>Des sujets capables de générer sauvegardes, partages et abonnements.</li>
+        </ul>
+      </div>
+      <div class="card hi big">
+        <div class="quote">Passer d'un compte "beau" à un compte qui prend de la traction.</div>
+        <ul class="list">
+          <li>12 Reels Instagram.</li>
+          <li>12 TikToks adaptés ou natifs.</li>
+          <li>4 carrousels à sauvegarder.</li>
+          <li>Stories quotidiennes légères.</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Content System</div><div class="small">Slide 11</div></div>
-  <h2>Les 4 piliers éditoriaux</h2>
-  <div class="grid g4 section-gap">
-    <div class="card"><div class="kicker">01 · Voyage cinématique</div><p>Atmosphère, météo, paysages simples, lumière, marche, café, texture.</p></div>
-    <div class="card"><div class="kicker">02 · Journal de PVT</div><p>Routine, budget, isolement, liberté, fatigue, discipline, vérité terrain.</p></div>
-    <div class="card"><div class="kicker">03 · Insight / réflexion</div><p>Phrases fortes, pensées courtes, leçons, nuances sur la vie à l'étranger.</p></div>
-    <div class="card"><div class="kicker">04 · Behind the craft</div><p>Plans, montage, son, workflow créatif et comment un lieu banal devient cinématique.</p></div>
+<hr class="sep">
+
+<!-- BRAND DNA -->
+<section class="section" id="brand">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">Brand DNA</span>
+      <h2>ADN de marque</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="kicker">Cinematic</div><p>Images lentes, respiration, lumière naturelle, cuts propres, sons ambiants.</p></div>
+      <div class="card"><div class="kicker">Quiet</div><p>Peu de visage, peu d'agitation, beaucoup de regard, d'espace et de détail.</p></div>
+      <div class="card"><div class="kicker">Premium</div><p>Rendu sombre, typographie forte, structure claire, exécution précise.</p></div>
+      <div class="card"><div class="kicker">Intentional</div><p>Chaque plan doit servir une sensation ou une idée, pas juste remplir.</p></div>
+      <div class="card"><div class="kicker">French-facing</div><p>Hooks, sous-titres et narration pensés pour une audience française.</p></div>
+      <div class="card"><div class="kicker">Journal-based</div><p>Vrai vécu de PVT, pas un simple décor de voyage générique.</p></div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Formats</div><div class="small">Slide 12</div></div>
-  <h2>Répartition des formats sur 30 jours</h2>
-  <div class="grid g4 section-gap">
-    <div class="card big"><div class="metric accent">60%</div><div class="kicker">Reels / TikToks narratifs</div><p>Les vidéos qui font ressentir une ambiance et racontent une idée.</p></div>
-    <div class="card big"><div class="metric accent">20%</div><div class="kicker">Contenu PVT utile</div><p>Budget, routine, attentes vs réalité, questions que les Français se posent.</p></div>
-    <div class="card big"><div class="metric accent">10%</div><div class="kicker">How I shot this</div><p>Montrer le craft sans devenir un compte purement technique.</p></div>
-    <div class="card big"><div class="metric accent">10%</div><div class="kicker">Carrousels premium</div><p>Hooks texte, synthèses et posts à sauvegarder.</p></div>
+<hr class="sep">
+
+<!-- AUDIENCE + POSITIONING -->
+<section class="section" id="audience">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">Audience & Positionnement</span>
+      <h2>À qui s'adresse ce contenu</h2>
+    </div>
+    <div class="grid g2">
+      <div class="card big">
+        <div class="kicker">Profil principal</div>
+        <ul class="list">
+          <li>18-34 ans, France, Instagram et TikTok natifs.</li>
+          <li>Intérêt pour le voyage, l'Australie, le PVT, la liberté, la narration visuelle.</li>
+          <li>Sensibles aux contenus immersifs et aux montages propres.</li>
+        </ul>
+      </div>
+      <div class="card big">
+        <div class="kicker">Ce qu'ils veulent ressentir</div>
+        <ul class="list">
+          <li>Projection : "je pourrais vivre ça".</li>
+          <li>Inspiration : "ce compte me fait ressentir quelque chose".</li>
+          <li>Utilité : "ce contenu m'aide à comprendre la vraie vie sur place".</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card hi big" style="margin-top:18px">
+      <div class="quote">Cinematic PVT Diary for French viewers.</div>
+      <div class="grid g3" style="margin-top:20px">
+        <div><span class="badge">Pas un vlog</span><p style="margin-top:10px">On évite l'énergie "je raconte tout face caméra".</p></div>
+        <div><span class="badge">Pas un compte d'info pur</span><p style="margin-top:10px">On ne devient pas une FAQ PVT impersonnelle.</p></div>
+        <div><span class="badge">Entre les deux</span><p style="margin-top:10px">Image forte + vérité terrain + narration utile.</p></div>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Editorial Calendar</div><div class="small">Slide 13</div></div>
-  <h2>Architecture du mois</h2>
-  <div class="roadmap section-gap">
-    <div class="step"><div class="num">W1</div><div class="kicker">Identity</div><p>Installer l'univers, le rythme, la voix et la promesse.</p></div>
-    <div class="step"><div class="num">W2</div><div class="kicker">Reality</div><p>Montrer la vraie vie de PVT sans casser l'image premium.</p></div>
-    <div class="step"><div class="num">W3</div><div class="kicker">Craft</div><p>Faire monter la crédibilité créative et la répétition visuelle.</p></div>
-    <div class="step"><div class="num">W4</div><div class="kicker">Scale</div><p>Doubler les sujets qui ont déjà montré des signaux forts.</p></div>
-    <div class="step"><div class="num">30D</div><div class="kicker">Review</div><p>Analyser et préparer le mois 2 avec les meilleures mécaniques.</p></div>
+<hr class="sep">
+
+<!-- BENCHMARK -->
+<section class="section" id="benchmark">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">Competitive Analysis</span>
+      <h2>Benchmark & opportunité</h2>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><td>Compte / Type</td><td>Ce qu'il fait bien</td><td>Leçon pour Enzo</td></tr></thead>
+        <tbody>
+          <tr><td>Jonanthony James</td><td>Met l'accent sur l'émotion et le "feeling of being there".</td><td>Chercher l'expérience ressentie, pas seulement la beauté du lieu.</td></tr>
+          <tr><td>Chris Bizet</td><td>Voyage filmé de manière simple, honnête et très cinématique.</td><td>Garder un ton vrai, sans surjouer la performance créateur.</td></tr>
+          <tr><td>My Little France Australie</td><td>Aide à préparer le départ, répond à des questions PVT concrètes.</td><td>Ajouter de la valeur pratique dans certains contenus.</td></tr>
+          <tr><td>departaustralie</td><td>Positionnement utile, orienté problématiques backpackers.</td><td>Ne pas rester uniquement esthétique ; donner aussi des repères terrain.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card big"><div class="quote">Les comptes utiles manquent souvent de désirabilité visuelle.</div><p style="margin-top:12px">Ils informent bien, mais la marque n'imprime pas toujours émotionnellement.</p></div>
+      <div class="card big"><div class="quote">Les comptes très beaux manquent parfois d'ancrage concret.</div><p style="margin-top:12px">Ils inspirent, mais donnent moins de repères tangibles sur la vie réelle en Australie.</p></div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Production Plan</div><div class="small">Slide 14</div></div>
-  <h2>Volume exact à produire</h2>
-  <div class="grid g4 section-gap">
-    <div class="card"><div class="metric">12</div><div class="kicker">Reels Instagram</div><p>3 par semaine.</p></div>
-    <div class="card"><div class="metric">12</div><div class="kicker">TikToks</div><p>Adaptation native ou repost optimisé.</p></div>
-    <div class="card"><div class="metric">4</div><div class="kicker">Carrousels</div><p>1 par semaine, à sauvegarder.</p></div>
-    <div class="card"><div class="metric">30</div><div class="kicker">Stories days</div><p>Présence quotidienne légère.</p></div>
+<hr class="sep">
+
+<!-- PILIERS + FORMATS -->
+<section class="section" id="piliers">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">Content System</span>
+      <h2>Les 4 piliers éditoriaux</h2>
+    </div>
+    <div class="grid g4">
+      <div class="card"><div class="kicker">01 · Voyage cinématique</div><p>Atmosphère, météo, paysages simples, lumière, marche, café, texture.</p></div>
+      <div class="card"><div class="kicker">02 · Journal de PVT</div><p>Routine, budget, isolement, liberté, fatigue, discipline, vérité terrain.</p></div>
+      <div class="card"><div class="kicker">03 · Insight / réflexion</div><p>Phrases fortes, pensées courtes, leçons, nuances sur la vie à l'étranger.</p></div>
+      <div class="card"><div class="kicker">04 · Behind the craft</div><p>Plans, montage, son, workflow créatif et comment un lieu banal devient cinématique.</p></div>
+    </div>
+    <div class="grid g4" style="margin-top:18px">
+      <div class="card big"><div class="metric accent">60%</div><div class="kicker">Reels / TikToks narratifs</div><p>Les vidéos qui font ressentir une ambiance et racontent une idée.</p></div>
+      <div class="card big"><div class="metric accent">20%</div><div class="kicker">Contenu PVT utile</div><p>Budget, routine, attentes vs réalité, questions que les Français se posent.</p></div>
+      <div class="card big"><div class="metric accent">10%</div><div class="kicker">How I shot this</div><p>Montrer le craft sans devenir un compte purement technique.</p></div>
+      <div class="card big"><div class="metric accent">10%</div><div class="kicker">Carrousels premium</div><p>Hooks texte, synthèses et posts à sauvegarder.</p></div>
+    </div>
   </div>
-  <p class="footer-note">Cadence cohérente avec une stratégie Instagram régulière de 3 à 5 posts par semaine et une présence story continue.</p>
-</div></section>
+</section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Posting Windows</div><div class="small">Slide 15</div></div>
-  <h2>Horaires de diffusion à tester d'abord</h2>
-  <div class="table t4 section-gap">
-    <div class="cell head">Plateforme</div><div class="cell head">Heure France</div><div class="cell head">Heure Atherton</div><div class="cell head">Usage</div>
-    <div class="cell">Instagram</div><div class="cell">Mercredi 12:00</div><div class="cell">Mercredi 20:00</div><div class="cell">Créneau principal</div>
-    <div class="cell">Instagram</div><div class="cell">Jeudi 09:00</div><div class="cell">Jeudi 17:00</div><div class="cell">Créneau principal</div>
-    <div class="cell">Instagram</div><div class="cell">Mercredi 18:00</div><div class="cell">Jeudi 02:00</div><div class="cell">Programmation</div>
-    <div class="cell">TikTok</div><div class="cell">Dimanche 09:00</div><div class="cell">Dimanche 17:00</div><div class="cell">Créneau principal</div>
-    <div class="cell">TikTok</div><div class="cell">Lundi 13:00</div><div class="cell">Lundi 21:00</div><div class="cell">Créneau principal</div>
-    <div class="cell">TikTok</div><div class="cell">Dimanche 13:00</div><div class="cell">Dimanche 21:00</div><div class="cell">Très bon créneau</div>
+<hr class="sep">
+
+<!-- CALENDRIER -->
+<section class="section" id="calendar">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">Editorial Calendar</span>
+      <h2>Calendrier éditorial sur 4 semaines</h2>
+    </div>
+    <div class="roadmap" style="margin-bottom:28px">
+      <div class="step"><div class="num">W1</div><div class="kicker">Identity</div><p>Installer l'univers, le rythme, la voix et la promesse.</p></div>
+      <div class="step"><div class="num">W2</div><div class="kicker">Reality</div><p>Montrer la vraie vie de PVT sans casser l'image premium.</p></div>
+      <div class="step"><div class="num">W3</div><div class="kicker">Craft</div><p>Faire monter la crédibilité créative et la répétition visuelle.</p></div>
+      <div class="step"><div class="num">W4</div><div class="kicker">Scale</div><p>Doubler les sujets qui ont déjà montré des signaux forts.</p></div>
+      <div class="step"><div class="num">30D</div><div class="kicker">Review</div><p>Analyser et préparer le mois 2 avec les meilleures mécaniques.</p></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><td>Semaine</td><td>Post 1</td><td>Post 2</td><td>Post 3</td><td>Post 4</td></tr></thead>
+        <tbody>
+          <tr><td><strong style="color:var(--text)">01</strong></td><td>Une journée simple en PVT à Atherton</td><td>Comment rendre un lieu banal cinématique</td><td>Routine du matin en Australie</td><td>Pourquoi Atherton est calme, et pourquoi c'est une force</td></tr>
+          <tr><td><strong style="color:var(--text)">02</strong></td><td>3 plans Pocket 3 pour un rendu cinéma</td><td>Road mood pluie / golden hour</td><td>Petit spot à moins de 30 min</td><td>Ce que personne ne dit sur le PVT en région</td></tr>
+          <tr><td><strong style="color:var(--text)">03</strong></td><td>Combien coûte vraiment une semaine ici</td><td>Routine coucher de soleil / night mood</td><td>1 lieu, 3 ambiances, 3 montages</td><td>Pourquoi je montre peu mon visage</td></tr>
+          <tr><td><strong style="color:var(--text)">04</strong></td><td>5 transitions simples à reproduire</td><td>Ce que la vie loin des villes m'a appris</td><td>ASMR pluie + nature + café</td><td>Bilan du mois : meilleur spot, meilleur mood, meilleure vidéo</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="grid g3 section-gap">
-    <div class="card"><div class="kicker">Instagram</div><p>Mercredi 20h AEST = priorité Reel.</p></div>
-    <div class="card"><div class="kicker">Instagram</div><p>Jeudi 17h AEST = second moment fort.</p></div>
-    <div class="card"><div class="kicker">TikTok</div><p>Dimanche 17h / 21h AEST = test prioritaire.</p></div>
+</section>
+
+<hr class="sep">
+
+<!-- HOOKS -->
+<section class="section" id="hooks">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">Hook Library</span>
+      <h2>Hooks à utiliser sur le mois</h2>
+    </div>
+    <div class="hooks">
+      <div class="hook">Tu n'as pas besoin d'un endroit fou pour créer une belle vidéo.</div>
+      <div class="hook">La vraie Australie est parfois <span class="accent">silencieuse</span>.</div>
+      <div class="hook">Je vis dans un coin où il ne se passe presque rien.</div>
+      <div class="hook">C'est justement pour ça que j'ai appris à mieux <span class="accent">regarder</span>.</div>
+      <div class="hook">Ce que personne ne dit sur le PVT en région.</div>
+      <div class="hook">1 lieu banal. 3 ambiances. 1 vidéo qui change tout.</div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">KPI Framework</div><div class="small">Slide 16</div></div>
-  <h2>KPI principaux Instagram</h2>
-  <div class="grid g3 section-gap">
-    <div class="card big"><div class="kicker">Reach</div><p>Mesure l'ampleur réelle de distribution du post.</p></div>
-    <div class="card big"><div class="kicker">Engagement rate</div><p>Permet d'évaluer la résonance du contenu, pas juste son exposition.</p></div>
-    <div class="card big"><div class="kicker">Saves</div><p>Signal fort d'utilité et de valeur perçue.</p></div>
-    <div class="card big"><div class="kicker">Shares / Sends per reach</div><p>Indicateur clé pour les contenus qui se diffusent au-delà du premier cercle.</p></div>
-    <div class="card big"><div class="kicker">Follows par post</div><p>Mesure la capacité du contenu à convertir l'attention en audience.</p></div>
-    <div class="card big"><div class="kicker">Profile visits</div><p>Vérifie si les hooks donnent envie d'aller voir le compte.</p></div>
+<hr class="sep">
+
+<!-- HORAIRES -->
+<section class="section" id="horaires">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">Posting Windows</span>
+      <h2>Horaires de diffusion</h2>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><td>Plateforme</td><td>Heure France</td><td>Heure Atherton (AEST)</td><td>Usage</td></tr></thead>
+        <tbody>
+          <tr><td>Instagram</td><td>Mercredi 12:00</td><td>Mercredi 20:00</td><td>Créneau principal Reel</td></tr>
+          <tr><td>Instagram</td><td>Jeudi 09:00</td><td>Jeudi 17:00</td><td>Second moment fort</td></tr>
+          <tr><td>TikTok</td><td>Dimanche 09:00</td><td>Dimanche 17:00</td><td>Test prioritaire</td></tr>
+          <tr><td>TikTok</td><td>Dimanche 13:00</td><td>Dimanche 21:00</td><td>Très bon créneau</td></tr>
+          <tr><td>TikTok</td><td>Lundi 13:00</td><td>Lundi 21:00</td><td>Créneau principal</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">KPI Framework</div><div class="small">Slide 17</div></div>
-  <h2>KPI principaux TikTok</h2>
-  <div class="grid g3 section-gap">
-    <div class="card big"><div class="kicker">Views</div><p>Base de visibilité, utile mais insuffisante seule.</p></div>
-    <div class="card big"><div class="kicker">Average watch time</div><p>Indique la capacité du montage à retenir.</p></div>
-    <div class="card big"><div class="kicker">Completion rate</div><p>Le meilleur test pour valider la structure de vidéo.</p></div>
-    <div class="card big"><div class="kicker">Shares</div><p>Mesure la viralité qualitative.</p></div>
-    <div class="card big"><div class="kicker">Saves / favorites</div><p>Valide l'intérêt durable du contenu.</p></div>
-    <div class="card big"><div class="kicker">Followers gained</div><p>Montre la capacité du contenu à transformer la portée en croissance.</p></div>
+<hr class="sep">
+
+<!-- KPIs -->
+<section class="section" id="kpis">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">KPI Framework</span>
+      <h2>Métriques à suivre</h2>
+    </div>
+    <div class="grid g2">
+      <div>
+        <div class="kicker" style="margin-bottom:14px;color:var(--soft);letter-spacing:.1em;font-size:12px;text-transform:uppercase">Instagram</div>
+        <div class="grid g3">
+          <div class="card"><div class="kicker">Reach</div><p>Ampleur réelle de distribution.</p></div>
+          <div class="card"><div class="kicker">Saves</div><p>Signal fort d'utilité et valeur perçue.</p></div>
+          <div class="card"><div class="kicker">Follows / post</div><p>Capacité à convertir l'attention.</p></div>
+          <div class="card"><div class="kicker">Engagement rate</div><p>Résonance du contenu.</p></div>
+          <div class="card"><div class="kicker">Shares / Sends</div><p>Diffusion au-delà du premier cercle.</p></div>
+          <div class="card"><div class="kicker">Profile visits</div><p>Le hook pousse-t-il à explorer ?</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="kicker" style="margin-bottom:14px;color:var(--soft);letter-spacing:.1em;font-size:12px;text-transform:uppercase">TikTok</div>
+        <div class="grid g3">
+          <div class="card"><div class="kicker">Views</div><p>Base de visibilité.</p></div>
+          <div class="card"><div class="kicker">Watch time</div><p>Qualité du montage et de la narration.</p></div>
+          <div class="card"><div class="kicker">Completion</div><p>Structure vidéo bien calibrée.</p></div>
+          <div class="card"><div class="kicker">Shares</div><p>Viralité qualitative.</p></div>
+          <div class="card"><div class="kicker">Saves</div><p>Intérêt durable du contenu.</p></div>
+          <div class="card"><div class="kicker">Followers</div><p>Portée → croissance réelle.</p></div>
+        </div>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Dashboard</div><div class="small">Slide 18</div></div>
-  <h2>Dashboard hebdomadaire à remplir</h2>
-  <div class="table t6 section-gap">
-    <div class="cell head">Semaine</div><div class="cell head">Top reach</div><div class="cell head">Top retention</div><div class="cell head">Top saves</div><div class="cell head">Top shares</div><div class="cell head">Action</div>
-    <div class="cell">1</div><div class="cell">Post le plus distribué</div><div class="cell">Hook ou montage le plus retenu</div><div class="cell">Sujet utile à répéter</div><div class="cell">Angle le plus partageable</div><div class="cell">Doubler les 2 meilleures mécaniques</div>
-    <div class="cell">2</div><div class="cell">Comparer à W1</div><div class="cell">Identifier pattern rétention</div><div class="cell">Repérer les posts pédagogiques</div><div class="cell">Voir ce qui circule le plus</div><div class="cell">Ajuster hooks et durée</div>
-    <div class="cell">3</div><div class="cell">Vérifier stabilisation</div><div class="cell">Mesurer qualité d'ouverture</div><div class="cell">Valider les sujets "save-worthy"</div><div class="cell">Repérer ce qui pousse au DM</div><div class="cell">Préparer scale W4</div>
-    <div class="cell">4</div><div class="cell">Top du mois</div><div class="cell">Best performer vidéo</div><div class="cell">Best performer utile</div><div class="cell">Best performer viral</div><div class="cell">Bâtir mois 2</div>
+<hr class="sep">
+
+<!-- WORKFLOW -->
+<section class="section" id="workflow">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">Workflow</span>
+      <h2>Production → Publication → Analyse</h2>
+    </div>
+    <div class="roadmap">
+      <div class="step"><div class="num">01</div><div class="kicker">Shoot</div><p>2 sessions par semaine, lever et fin de journée.</p></div>
+      <div class="step"><div class="num">02</div><div class="kicker">Select</div><p>Choisir les plans les plus propres et les plus calmes.</p></div>
+      <div class="step"><div class="num">03</div><div class="kicker">Edit</div><p>Montage sombre, net, peu saturé, hook visible immédiatement.</p></div>
+      <div class="step"><div class="num">04</div><div class="kicker">Post</div><p>Publier aux créneaux France convertis pour Atherton.</p></div>
+      <div class="step"><div class="num">05</div><div class="kicker">Review</div><p>Mesurer, noter, répéter ce qui fonctionne vraiment.</p></div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Decision Rules</div><div class="small">Slide 19</div></div>
-  <h2>Règles d'analyse : comment juger un post</h2>
-  <div class="grid g2 section-gap">
-    <div class="card big"><div class="kicker">Un post performant</div><div class="list"><div>Bon reach.</div><div>Bonne rétention.</div><div>Partages ou sauvegardes réels.</div><div>Follows attribuables au post.</div></div></div>
-    <div class="card big"><div class="kicker">Un post à retravailler</div><div class="list"><div>Reach faible malgré bon sujet.</div><div>Hook trop lent ou trop flou.</div><div>Durée mal calibrée.</div><div>Fin trop faible pour déclencher action.</div></div></div>
+<hr class="sep">
+
+<!-- CONCLUSION -->
+<section class="section" id="conclusion">
+  <div class="wrap">
+    <div class="sh">
+      <span class="brand label">Conclusion</span>
+      <h2>Ce qu'on scale au mois 2</h2>
+    </div>
+    <div class="grid g3" style="margin-bottom:18px">
+      <div class="card big"><div class="kicker">Les sujets qui gagnent des saves</div><p>Ils deviennent des séries et des carrousels récurrents.</p></div>
+      <div class="card big"><div class="kicker">Les hooks qui retiennent</div><p>Ils deviennent le nouveau standard d'ouverture vidéo.</p></div>
+      <div class="card big"><div class="kicker">Les formats qui font gagner des abonnés</div><p>Ils prennent plus de volume dans le mois suivant.</p></div>
+    </div>
+    <div class="card hi big">
+      <div class="quote">Le but n'est pas de poster plus. Le but est de créer une mécanique qui donne des signaux clairs.</div>
+      <ul class="list">
+        <li>Produire vite, mais publier propre.</li>
+        <li>Mesurer chaque semaine, pas au feeling.</li>
+        <li>Construire une image cohérente avant de chercher la viralité pure.</li>
+        <li>Répéter agressivement ce qui fonctionne.</li>
+      </ul>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Hook Library</div><div class="small">Slide 20</div></div>
-  <h2>Hooks à utiliser sur le mois</h2>
-  <div class="hooks">
-    <div class="hook">Tu n'as pas besoin d'un endroit fou pour créer une belle vidéo.</div>
-    <div class="hook">La vraie Australie est parfois <span class="accent">silencieuse</span>.</div>
-    <div class="hook">Je vis dans un coin où il ne se passe presque rien.</div>
-    <div class="hook">C'est justement pour ça que j'ai appris à mieux <span class="accent">regarder</span>.</div>
-    <div class="hook">Ce que personne ne dit sur le PVT en région.</div>
-    <div class="hook">1 lieu banal. 3 ambiances. 1 vidéo qui change tout.</div>
-  </div>
-</div></section>
+<footer>
+  <div class="brand" style="display:inline-flex;margin-bottom:10px">@nobleedge.agency</div><br>
+  30-Day Content Growth Plan · Enzo Panuela · Noble Edge
+</footer>
 
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Weekly Calendar</div><div class="small">Slide 21</div></div>
-  <h2>Calendrier éditorial sur 4 semaines</h2>
-  <div class="table t5 section-gap">
-    <div class="cell head">Semaine</div><div class="cell head">Post 1</div><div class="cell head">Post 2</div><div class="cell head">Post 3</div><div class="cell head">Post 4</div>
-    <div class="cell">01</div><div class="cell">Une journée simple en PVT à Atherton</div><div class="cell">Comment rendre un lieu banal cinématique</div><div class="cell">Routine du matin en Australie</div><div class="cell">Pourquoi Atherton est calme, et pourquoi c'est une force</div>
-    <div class="cell">02</div><div class="cell">3 plans Pocket 3 pour un rendu cinéma</div><div class="cell">Road mood pluie / golden hour</div><div class="cell">Petit spot à moins de 30 min</div><div class="cell">Ce que personne ne dit sur le PVT en région</div>
-    <div class="cell">03</div><div class="cell">Combien coûte vraiment une semaine ici</div><div class="cell">Routine coucher de soleil / night mood</div><div class="cell">1 lieu, 3 ambiances, 3 montages</div><div class="cell">Pourquoi je montre peu mon visage</div>
-    <div class="cell">04</div><div class="cell">5 transitions simples à reproduire</div><div class="cell">Ce que la vie loin des villes m'a appris</div><div class="cell">ASMR pluie + nature + café</div><div class="cell">Bilan du mois : meilleur spot, meilleur mood, meilleure vidéo</div>
-  </div>
-</div></section>
-
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Workflow</div><div class="small">Slide 22</div></div>
-  <h2>Workflow production → publication → analyse</h2>
-  <div class="roadmap section-gap">
-    <div class="step"><div class="num">01</div><div class="kicker">Shoot</div><p>2 sessions par semaine, lever et fin de journée.</p></div>
-    <div class="step"><div class="num">02</div><div class="kicker">Select</div><p>Choisir les plans les plus propres et les plus calmes.</p></div>
-    <div class="step"><div class="num">03</div><div class="kicker">Edit</div><p>Montage sombre, net, peu saturé, hook visible immédiatement.</p></div>
-    <div class="step"><div class="num">04</div><div class="kicker">Post</div><p>Publier aux créneaux France convertis pour Atherton.</p></div>
-    <div class="step"><div class="num">05</div><div class="kicker">Review</div><p>Mesurer, noter, répéter ce qui fonctionne vraiment.</p></div>
-  </div>
-</div></section>
-
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Month 2 Forecast</div><div class="small">Slide 23</div></div>
-  <h2>Ce qu'on scale au mois 2</h2>
-  <div class="grid g3 section-gap">
-    <div class="card big"><div class="kicker">Les sujets qui gagnent des saves</div><p>Ils deviennent des séries et des carrousels récurrents.</p></div>
-    <div class="card big"><div class="kicker">Les hooks qui retiennent</div><p>Ils deviennent le nouveau standard d'ouverture vidéo.</p></div>
-    <div class="card big"><div class="kicker">Les formats qui font gagner des abonnés</div><p>Ils prennent plus de volume dans le mois suivant.</p></div>
-  </div>
-</div></section>
-
-<section class="slide"><div class="wrap">
-  <div class="topbar"><div class="brand">Final Roadmap</div><div class="small">Slide 24</div></div>
-  <h2>Conclusion opérationnelle</h2>
-  <div class="grid g2 section-gap">
-    <div class="card big"><div class="quote">Le but n'est pas de poster plus. Le but est de créer une mécanique qui donne des signaux clairs.</div></div>
-    <div class="card big"><div class="list"><div>Produire vite, mais publier propre.</div><div>Mesurer chaque semaine, pas au feeling.</div><div>Construire une image cohérente avant de chercher la viralité pure.</div><div>Répéter agressivement ce qui fonctionne.</div></div></div>
-  </div>
-</div></section>
-
-</div>
-
-<div class="nav">
-  <button class="btn" onclick="move(-1)">&#8249;</button>
-  <div class="dots" id="dots"></div>
-  <button class="btn" onclick="move(1)">&#8250;</button>
-  <div class="count" id="count"></div>
-</div>
-
-<script>
-const slides=[...document.querySelectorAll('.slide')];
-const dots=document.getElementById('dots');
-const count=document.getElementById('count');
-let idx=0;
-slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>go(i);dots.appendChild(d)});
-function render(){slides.forEach((s,i)=>s.classList.toggle('active',i===idx));[...dots.children].forEach((d,i)=>d.classList.toggle('active',i===idx));count.textContent=`${idx+1} / ${slides.length}`;document.documentElement.scrollTop=0;document.body.scrollTop=0;}
-function go(i){idx=(i+slides.length)%slides.length;render()}
-function move(step){go(idx+step)}
-document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();move(1)} if(e.key==='ArrowLeft'){e.preventDefault();move(-1)}});
-let start=0;document.addEventListener('touchstart',e=>start=e.touches[0].clientX,{passive:true});document.addEventListener('touchend',e=>{const diff=start-e.changedTouches[0].clientX;if(Math.abs(diff)>50) move(diff>0?1:-1)},{passive:true});
-render();
-</script>
 </body>
 </html>
