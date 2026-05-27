@@ -26,10 +26,10 @@
   --shadow:0 24px 60px rgba(0,0,0,.28);
 }
 *{box-sizing:border-box}
-html,body{min-height:100%;margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(135deg,var(--bg),var(--bg2));color:var(--text);overflow-x:hidden}
+html,body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(135deg,var(--bg),var(--bg2));color:var(--text);overflow-x:hidden}
 body{letter-spacing:-0.01em}
-.deck{position:relative;height:100vh;width:100vw}
-.slide{position:absolute;inset:0;display:none;overflow:auto;padding:46px 54px 100px;background:
+.deck{position:relative;width:100%}
+.slide{display:none;min-height:100vh;padding:46px 54px 100px;overflow:visible;background:
 radial-gradient(900px 500px at 92% 88%, rgba(116,104,255,.22), transparent 30%),
 radial-gradient(700px 380px at 8% 10%, rgba(95,88,150,.18), transparent 28%),
 linear-gradient(135deg, #0f0d16 0%, #120f1c 42%, #1d1931 100%)}
@@ -59,7 +59,7 @@ p{color:var(--muted);line-height:1.6}
 .list div{padding-left:18px;position:relative;color:var(--muted);line-height:1.5}
 .list div:before{content:'';position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:var(--purple2)}
 .kicker{font-size:15px;font-weight:800;color:var(--text);margin-bottom:8px}
-.table{display:grid;border:1px solid var(--border);border-radius:24px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.table{display:grid;border:1px solid var(--border);border-radius:24px;overflow:auto;background:var(--card);box-shadow:var(--shadow)}
 .t4{grid-template-columns:1.15fr .9fr .95fr 1.15fr}
 .t5{grid-template-columns:140px repeat(4,1fr)}
 .t6{grid-template-columns:repeat(6,1fr)}
@@ -89,67 +89,45 @@ p{color:var(--muted);line-height:1.6}
 .dot.active{background:var(--purple2)}
 .count{font-size:13px;color:var(--soft);min-width:58px;text-align:center}
 hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(116,104,255,.8),transparent);margin:22px 0}
-@media (max-width: 980px){
+
+/* === RESPONSIVE === */
+@media(max-width:980px){
   .slide{padding:28px 20px 100px}
   h1{font-size:46px} h2{font-size:34px} .quote{font-size:22px}
   .cover-grid,.split,.g2,.g3,.g4,.roadmap,.hooks{grid-template-columns:1fr}
   .mockfeed{grid-template-columns:1fr 1fr}
-  .table,.t4,.t5,.t6{display:block}
+  .table{display:block;overflow-x:auto}
+  .t4,.t5,.t6{display:block;overflow-x:auto}
   .cell{border-right:none}
 }
-
-/* ===== RESPONSIVE OVERRIDES ===== */
-@media (max-width: 1024px) {
-  .slide { padding: 32px 32px 80px; }
-  h1 { font-size: 52px; }
-  h2 { font-size: 34px; }
-  .g4 { grid-template-columns: repeat(2,1fr); }
-  .g3 { grid-template-columns: repeat(2,1fr); }
+@media(max-width:600px){
+  .slide{padding:18px 14px 90px}
+  h1{font-size:clamp(26px,8vw,40px)}
+  h2{font-size:clamp(20px,6vw,32px)}
+  h3{font-size:clamp(15px,4.5vw,22px)}
+  .hero-sub{font-size:14px}
+  .card{padding:16px;border-radius:16px}
+  .big{padding:18px}
+  .metric{font-size:28px}
+  .topbar{flex-wrap:wrap;gap:8px}
+  .hook{font-size:16px}
+  .nav{
+    position:fixed;bottom:0;left:0;right:0;
+    transform:none;border-radius:0;
+    width:100%;justify-content:center;
+    padding:10px 8px;gap:6px
+  }
+  .btn{width:32px;height:32px;font-size:16px}
+  .dots{max-width:260px}
+  .dot{width:7px;height:7px}
+  .count{font-size:11px;min-width:44px}
+  .roadmap{grid-template-columns:1fr 1fr}
+  .tile{font-size:18px}
 }
-@media (max-width: 768px) {
-  html,body { overflow: auto; }
-  .deck { height: auto; min-height: 100vh; width: 100%; }
-  .slide { position: relative; inset: auto; display: none; padding: 24px 18px 70px; min-height: 100vh; }
-  .slide.active { display: block; }
-  h1 { font-size: 36px; }
-  h2 { font-size: 26px; }
-  h3 { font-size: 18px; }
-  .hero-sub { font-size: 15px; }
-  .g2, .g3, .g4 { grid-template-columns: 1fr; }
-  .card { padding: 18px; border-radius: 16px; }
-  .big { padding: 20px; }
-  .metric { font-size: 28px; }
-  .topbar { flex-wrap: wrap; gap: 8px; }
-  .brand { font-size: 10px; padding: 6px 10px; }
-  table { font-size: 12px; }
-  td, th { padding: 8px 10px; }
-  .nav { padding: 14px 18px; gap: 8px; flex-wrap: wrap; }
-  .nav-btn { font-size: 11px; padding: 8px 14px; }
-  .slide-counter { font-size: 11px; }
-  .wrap { max-width: 100%; }
-}
-@media (max-width: 480px) {
-  .slide { padding: 18px 12px 64px; }
-  h1 { font-size: 28px; letter-spacing: -0.03em; }
-  h2 { font-size: 20px; }
-  h3 { font-size: 16px; }
-  .hero-sub { font-size: 13px; }
-  .card { padding: 14px; }
-  .metric { font-size: 24px; }
-}
-/* Portrait tablet */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  h1 { font-size: 44px; }
-  h2 { font-size: 30px; }
-  .g4 { grid-template-columns: repeat(2,1fr); }
-  .slide { padding: 28px 28px 80px; }
-}
-/* Landscape phone */
-@media (max-width: 768px) and (orientation: landscape) {
-  .slide { padding: 18px 24px 60px; }
-  h1 { font-size: 32px; }
-  h2 { font-size: 22px; }
-  .g2 { grid-template-columns: repeat(2,1fr); }
+@media(max-width:380px){
+  .slide{padding:14px 10px 86px}
+  h1{font-size:24px}
+  h2{font-size:18px}
 }
 </style>
 </head>
@@ -162,12 +140,12 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
       <div class="topbar"><div class="brand">@nobleedge.agency</div><div class="small">Final Strategy Deck · 30 days</div></div>
       <div class="small">Enzo Panuela · France-facing growth system</div>
       <h1>30-Day Content<br>Growth Plan</h1>
-      <p class="hero-sub">Une stratégie éditoriale ultra précise pour faire grandir Instagram et TikTok avec une direction artistique cinématique, discrète et premium, cohérente avec l’univers Noble Edge.</p>
+      <p class="hero-sub">Une stratégie éditoriale ultra précise pour faire grandir Instagram et TikTok avec une direction artistique cinématique, discrète et premium, cohérente avec l'univers Noble Edge.</p>
       <hr class="sep">
       <div class="grid g3">
         <div class="card"><div class="mini">Objectif</div><div class="metric">30 jours</div><p>Installer une identité forte et produire des signaux clairs de croissance.</p></div>
         <div class="card"><div class="mini">Marché</div><div class="metric">France</div><p>Audience francophone voyage, PVT, lifestyle visuel et découverte.</p></div>
-        <div class="card"><div class="mini">Angle</div><div class="metric">Cinematic</div><p>Peu de facecam, beaucoup d’atmosphère, de voix off et de détails.</p></div>
+        <div class="card"><div class="mini">Angle</div><div class="metric">Cinematic</div><p>Peu de facecam, beaucoup d'atmosphère, de voix off et de détails.</p></div>
       </div>
     </div>
     <div class="cover-box">
@@ -189,7 +167,7 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <h2>Ce que ce plan doit produire en 30 jours</h2>
   <div class="grid g2 section-gap">
     <div class="card big"><div class="quote">Créer une présence immédiatement reconnaissable, pas juste publier plus.</div><div class="list"><div>Une DA stable et cohérente sur tous les formats.</div><div>Une grille de contenus répétable et mesurable.</div><div>Des sujets capables de générer sauvegardes, partages et abonnements.</div></div></div>
-    <div class="card big"><div class="quote">Passer d’un compte “beau” à un compte qui prend de la traction.</div><div class="list"><div>12 Reels Instagram.</div><div>12 TikToks adaptés ou natifs.</div><div>4 carrousels et stories quotidiennes.</div></div></div>
+    <div class="card big"><div class="quote">Passer d'un compte "beau" à un compte qui prend de la traction.</div><div class="list"><div>12 Reels Instagram.</div><div>12 TikToks adaptés ou natifs.</div><div>4 carrousels et stories quotidiennes.</div></div></div>
   </div>
 </div></section>
 
@@ -198,7 +176,7 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <h2>ADN de marque pour Enzo</h2>
   <div class="grid g3 section-gap">
     <div class="card"><div class="kicker">Cinematic</div><p>Images lentes, respiration, lumière naturelle, cuts propres, sons ambiants.</p></div>
-    <div class="card"><div class="kicker">Quiet</div><p>Peu de visage, peu d’agitation, beaucoup de regard, d’espace et de détail.</p></div>
+    <div class="card"><div class="kicker">Quiet</div><p>Peu de visage, peu d'agitation, beaucoup de regard, d'espace et de détail.</p></div>
     <div class="card"><div class="kicker">Premium</div><p>Rendu sombre, typographie forte, structure claire, exécution précise.</p></div>
     <div class="card"><div class="kicker">Intentional</div><p>Chaque plan doit servir une sensation ou une idée, pas juste remplir.</p></div>
     <div class="card"><div class="kicker">French-facing</div><p>Hooks, sous-titres et narration pensés pour une audience française.</p></div>
@@ -210,17 +188,17 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <div class="topbar"><div class="brand">Audience</div><div class="small">Slide 4</div></div>
   <h2>Audience cible et psychologie</h2>
   <div class="split section-gap">
-    <div class="card big"><div class="mini">Profil principal</div><div class="list"><div>18-34 ans, France, Instagram et TikTok natifs.</div><div>Intérêt pour le voyage, l’Australie, le PVT, la liberté, la narration visuelle.</div><div>Sensibles aux contenus immersifs, aux phrases fortes et aux montages propres.</div></div></div>
-    <div class="card big"><div class="mini">Ce qu’ils veulent ressentir</div><div class="list"><div>Projection : “je pourrais vivre ça”.</div><div>Inspiration : “ce compte me fait ressentir quelque chose”.</div><div>Utilité : “ce contenu m’aide à comprendre la vraie vie sur place”.</div></div></div>
+    <div class="card big"><div class="mini">Profil principal</div><div class="list"><div>18-34 ans, France, Instagram et TikTok natifs.</div><div>Intérêt pour le voyage, l'Australie, le PVT, la liberté, la narration visuelle.</div><div>Sensibles aux contenus immersifs, aux phrases fortes et aux montages propres.</div></div></div>
+    <div class="card big"><div class="mini">Ce qu'ils veulent ressentir</div><div class="list"><div>Projection : "je pourrais vivre ça".</div><div>Inspiration : "ce compte me fait ressentir quelque chose".</div><div>Utilité : "ce contenu m'aide à comprendre la vraie vie sur place".</div></div></div>
   </div>
 </div></section>
 
 <section class="slide"><div class="wrap">
   <div class="topbar"><div class="brand">Opportunity</div><div class="small">Slide 5</div></div>
-  <h2>Le problème n’est pas Atherton</h2>
+  <h2>Le problème n'est pas Atherton</h2>
   <div class="grid g2 section-gap">
-    <div class="card big"><div class="quote">Le décor n’est pas l’avantage compétitif.</div><p class="section-gap">Le vrai différenciateur, c’est la capacité à rendre un lieu simple mémorable grâce au regard, au son, au rythme et au texte.</p></div>
-    <div class="card big"><div class="quote">Le compte doit vendre une perception.</div><p class="section-gap">Calme. Liberté. Discipline. Solitude choisie. Beauté discrète. C’est cette sensation qui devient la marque.</p></div>
+    <div class="card big"><div class="quote">Le décor n'est pas l'avantage compétitif.</div><p class="section-gap">Le vrai différenciateur, c'est la capacité à rendre un lieu simple mémorable grâce au regard, au son, au rythme et au texte.</p></div>
+    <div class="card big"><div class="quote">Le compte doit vendre une perception.</div><p class="section-gap">Calme. Liberté. Discipline. Solitude choisie. Beauté discrète. C'est cette sensation qui devient la marque.</p></div>
   </div>
 </div></section>
 
@@ -228,10 +206,10 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <div class="topbar"><div class="brand">Competitive Analysis</div><div class="small">Slide 6</div></div>
   <h2>Benchmark 1 — Créateurs cinématiques</h2>
   <div class="table t4 section-gap">
-    <div class="cell head">Compte</div><div class="cell head">Ce qu’il fait bien</div><div class="cell head">Force perçue</div><div class="cell head">Leçon pour Enzo</div>
-    <div class="cell">Jonanthony James</div><div class="cell">Met l’accent sur l’émotion, la sensation et le “feeling of being there”.</div><div class="cell">Immersion forte.</div><div class="cell">Chercher l’expérience ressentie, pas seulement la beauté du lieu.</div>
+    <div class="cell head">Compte</div><div class="cell head">Ce qu'il fait bien</div><div class="cell head">Force perçue</div><div class="cell head">Leçon pour Enzo</div>
+    <div class="cell">Jonanthony James</div><div class="cell">Met l'accent sur l'émotion, la sensation et le "feeling of being there".</div><div class="cell">Immersion forte.</div><div class="cell">Chercher l'expérience ressentie, pas seulement la beauté du lieu.</div>
     <div class="cell">Chris Bizet</div><div class="cell">Voyage filmé de manière simple, honnête et très cinématique.</div><div class="cell">Sincérité premium.</div><div class="cell">Garder un ton vrai, sans surjouer la performance créateur.</div>
-    <div class="cell">Créateurs travel ciné</div><div class="cell">Très bons hooks visuels, ambiance, sound design.</div><div class="cell">Valeur d’image.</div><div class="cell">Soigner les 2 premières secondes et la chute.</div>
+    <div class="cell">Créateurs travel ciné</div><div class="cell">Très bons hooks visuels, ambiance, sound design.</div><div class="cell">Valeur d'image.</div><div class="cell">Soigner les 2 premières secondes et la chute.</div>
   </div>
   <div class="footer-note">Référence concurrentielle utilisée pour le positionnement, pas pour copier la forme exacte.</div>
 </div></section>
@@ -240,10 +218,10 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <div class="topbar"><div class="brand">Competitive Analysis</div><div class="small">Slide 7</div></div>
   <h2>Benchmark 2 — Comptes PVT / utilité</h2>
   <div class="table t4 section-gap">
-    <div class="cell head">Compte</div><div class="cell head">Ce qu’il fait bien</div><div class="cell head">Force perçue</div><div class="cell head">Leçon pour Enzo</div>
+    <div class="cell head">Compte</div><div class="cell head">Ce qu'il fait bien</div><div class="cell head">Force perçue</div><div class="cell head">Leçon pour Enzo</div>
     <div class="cell">My Little France Australie</div><div class="cell">Aide à préparer le départ et répond à des questions PVT concrètes.</div><div class="cell">Clarté.</div><div class="cell">Ajouter de la valeur pratique dans certains contenus.</div>
     <div class="cell">departaustralie</div><div class="cell">Positionnement utile et orienté problématiques backpackers.</div><div class="cell">Pertinence directe.</div><div class="cell">Ne pas rester uniquement esthétique ; donner aussi des repères terrain.</div>
-    <div class="cell">Comptes PVT informatifs</div><div class="cell">Format simple, compréhensible, réassurant.</div><div class="cell">Saves élevés.</div><div class="cell">Produire des posts “à sauvegarder” une fois par semaine.</div>
+    <div class="cell">Comptes PVT informatifs</div><div class="cell">Format simple, compréhensible, réassurant.</div><div class="cell">Saves élevés.</div><div class="cell">Produire des posts "à sauvegarder" une fois par semaine.</div>
   </div>
 </div></section>
 
@@ -251,7 +229,7 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <div class="topbar"><div class="brand">Competitive Analysis</div><div class="small">Slide 8</div></div>
   <h2>Ce que la concurrence fait bien</h2>
   <div class="grid g3 section-gap">
-    <div class="card big"><div class="kicker">Émotion</div><p>Les créateurs cinématiques vendent une sensation forte, parfois plus que l’information elle-même.</p></div>
+    <div class="card big"><div class="kicker">Émotion</div><p>Les créateurs cinématiques vendent une sensation forte, parfois plus que l'information elle-même.</p></div>
     <div class="card big"><div class="kicker">Utilité</div><p>Les comptes PVT gagnent sur la clarté, les réponses concrètes et la capacité à rassurer.</p></div>
     <div class="card big"><div class="kicker">Clarté de promesse</div><p>Les meilleurs comptes sont immédiatement compréhensibles dès le nom, le hook et la cover.</p></div>
   </div>
@@ -259,21 +237,21 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
 
 <section class="slide"><div class="wrap">
   <div class="topbar"><div class="brand">Competitive Analysis</div><div class="small">Slide 9</div></div>
-  <h2>Leur limite = l’opportunité d’Enzo</h2>
+  <h2>Leur limite = l'opportunité d'Enzo</h2>
   <div class="grid g2 section-gap">
-    <div class="card big"><div class="quote">Les comptes utiles manquent souvent de désirabilité visuelle.</div><p class="section-gap">Ils informent bien, mais la marque n’imprime pas toujours émotionnellement.</p></div>
-    <div class="card big"><div class="quote">Les comptes très beaux manquent parfois d’ancrage concret.</div><p class="section-gap">Ils inspirent, mais donnent moins de repères tangibles sur la vie réelle en Australie.</p></div>
+    <div class="card big"><div class="quote">Les comptes utiles manquent souvent de désirabilité visuelle.</div><p class="section-gap">Ils informent bien, mais la marque n'imprime pas toujours émotionnellement.</p></div>
+    <div class="card big"><div class="quote">Les comptes très beaux manquent parfois d'ancrage concret.</div><p class="section-gap">Ils inspirent, mais donnent moins de repères tangibles sur la vie réelle en Australie.</p></div>
   </div>
 </div></section>
 
 <section class="slide"><div class="wrap">
   <div class="topbar"><div class="brand">Positioning</div><div class="small">Slide 10</div></div>
-  <h2>Positionnement différenciant d’Enzo</h2>
+  <h2>Positionnement différenciant d'Enzo</h2>
   <div class="card big section-gap">
     <div class="quote">Cinematic PVT Diary for French viewers.</div>
     <div class="grid g3 section-gap">
-      <div><span class="badge">Pas un vlog</span><p class="section-gap">On évite l’énergie “je raconte tout face caméra”.</p></div>
-      <div><span class="badge">Pas un compte d’info pur</span><p class="section-gap">On ne devient pas une FAQ PVT impersonnelle.</p></div>
+      <div><span class="badge">Pas un vlog</span><p class="section-gap">On évite l'énergie "je raconte tout face caméra".</p></div>
+      <div><span class="badge">Pas un compte d'info pur</span><p class="section-gap">On ne devient pas une FAQ PVT impersonnelle.</p></div>
       <div><span class="badge">Entre les deux</span><p class="section-gap">Image forte + vérité terrain + narration utile.</p></div>
     </div>
   </div>
@@ -285,7 +263,7 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <div class="grid g4 section-gap">
     <div class="card"><div class="kicker">01 · Voyage cinématique</div><p>Atmosphère, météo, paysages simples, lumière, marche, café, texture.</p></div>
     <div class="card"><div class="kicker">02 · Journal de PVT</div><p>Routine, budget, isolement, liberté, fatigue, discipline, vérité terrain.</p></div>
-    <div class="card"><div class="kicker">03 · Insight / réflexion</div><p>Phrases fortes, pensées courtes, leçons, nuances sur la vie à l’étranger.</p></div>
+    <div class="card"><div class="kicker">03 · Insight / réflexion</div><p>Phrases fortes, pensées courtes, leçons, nuances sur la vie à l'étranger.</p></div>
     <div class="card"><div class="kicker">04 · Behind the craft</div><p>Plans, montage, son, workflow créatif et comment un lieu banal devient cinématique.</p></div>
   </div>
 </div></section>
@@ -305,8 +283,8 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <div class="topbar"><div class="brand">Editorial Calendar</div><div class="small">Slide 13</div></div>
   <h2>Architecture du mois</h2>
   <div class="roadmap section-gap">
-    <div class="step"><div class="num">W1</div><div class="kicker">Identity</div><p>Installer l’univers, le rythme, la voix et la promesse.</p></div>
-    <div class="step"><div class="num">W2</div><div class="kicker">Reality</div><p>Montrer la vraie vie de PVT sans casser l’image premium.</p></div>
+    <div class="step"><div class="num">W1</div><div class="kicker">Identity</div><p>Installer l'univers, le rythme, la voix et la promesse.</p></div>
+    <div class="step"><div class="num">W2</div><div class="kicker">Reality</div><p>Montrer la vraie vie de PVT sans casser l'image premium.</p></div>
     <div class="step"><div class="num">W3</div><div class="kicker">Craft</div><p>Faire monter la crédibilité créative et la répétition visuelle.</p></div>
     <div class="step"><div class="num">W4</div><div class="kicker">Scale</div><p>Doubler les sujets qui ont déjà montré des signaux forts.</p></div>
     <div class="step"><div class="num">30D</div><div class="kicker">Review</div><p>Analyser et préparer le mois 2 avec les meilleures mécaniques.</p></div>
@@ -327,7 +305,7 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
 
 <section class="slide"><div class="wrap">
   <div class="topbar"><div class="brand">Posting Windows</div><div class="small">Slide 15</div></div>
-  <h2>Horaires de diffusion à tester d’abord</h2>
+  <h2>Horaires de diffusion à tester d'abord</h2>
   <div class="table t4 section-gap">
     <div class="cell head">Plateforme</div><div class="cell head">Heure France</div><div class="cell head">Heure Atherton</div><div class="cell head">Usage</div>
     <div class="cell">Instagram</div><div class="cell">Mercredi 12:00</div><div class="cell">Mercredi 20:00</div><div class="cell">Créneau principal</div>
@@ -348,12 +326,12 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <div class="topbar"><div class="brand">KPI Framework</div><div class="small">Slide 16</div></div>
   <h2>KPI principaux Instagram</h2>
   <div class="grid g3 section-gap">
-    <div class="card big"><div class="kicker">Reach</div><p>Mesure l’ampleur réelle de distribution du post.</p></div>
-    <div class="card big"><div class="kicker">Engagement rate</div><p>Permet d’évaluer la résonance du contenu, pas juste son exposition.</p></div>
-    <div class="card big"><div class="kicker">Saves</div><p>Signal fort d’utilité et de valeur perçue.</p></div>
+    <div class="card big"><div class="kicker">Reach</div><p>Mesure l'ampleur réelle de distribution du post.</p></div>
+    <div class="card big"><div class="kicker">Engagement rate</div><p>Permet d'évaluer la résonance du contenu, pas juste son exposition.</p></div>
+    <div class="card big"><div class="kicker">Saves</div><p>Signal fort d'utilité et de valeur perçue.</p></div>
     <div class="card big"><div class="kicker">Shares / Sends per reach</div><p>Indicateur clé pour les contenus qui se diffusent au-delà du premier cercle.</p></div>
-    <div class="card big"><div class="kicker">Follows par post</div><p>Mesure la capacité du contenu à convertir l’attention en audience.</p></div>
-    <div class="card big"><div class="kicker">Profile visits</div><p>Vérifie si les hooks donnent envie d’aller voir le compte.</p></div>
+    <div class="card big"><div class="kicker">Follows par post</div><p>Mesure la capacité du contenu à convertir l'attention en audience.</p></div>
+    <div class="card big"><div class="kicker">Profile visits</div><p>Vérifie si les hooks donnent envie d'aller voir le compte.</p></div>
   </div>
 </div></section>
 
@@ -365,7 +343,7 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
     <div class="card big"><div class="kicker">Average watch time</div><p>Indique la capacité du montage à retenir.</p></div>
     <div class="card big"><div class="kicker">Completion rate</div><p>Le meilleur test pour valider la structure de vidéo.</p></div>
     <div class="card big"><div class="kicker">Shares</div><p>Mesure la viralité qualitative.</p></div>
-    <div class="card big"><div class="kicker">Saves / favorites</div><p>Valide l’intérêt durable du contenu.</p></div>
+    <div class="card big"><div class="kicker">Saves / favorites</div><p>Valide l'intérêt durable du contenu.</p></div>
     <div class="card big"><div class="kicker">Followers gained</div><p>Montre la capacité du contenu à transformer la portée en croissance.</p></div>
   </div>
 </div></section>
@@ -377,14 +355,14 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
     <div class="cell head">Semaine</div><div class="cell head">Top reach</div><div class="cell head">Top retention</div><div class="cell head">Top saves</div><div class="cell head">Top shares</div><div class="cell head">Action</div>
     <div class="cell">1</div><div class="cell">Post le plus distribué</div><div class="cell">Hook ou montage le plus retenu</div><div class="cell">Sujet utile à répéter</div><div class="cell">Angle le plus partageable</div><div class="cell">Doubler les 2 meilleures mécaniques</div>
     <div class="cell">2</div><div class="cell">Comparer à W1</div><div class="cell">Identifier pattern rétention</div><div class="cell">Repérer les posts pédagogiques</div><div class="cell">Voir ce qui circule le plus</div><div class="cell">Ajuster hooks et durée</div>
-    <div class="cell">3</div><div class="cell">Vérifier stabilisation</div><div class="cell">Mesurer qualité d’ouverture</div><div class="cell">Valider les sujets “save-worthy”</div><div class="cell">Repérer ce qui pousse au DM</div><div class="cell">Préparer scale W4</div>
+    <div class="cell">3</div><div class="cell">Vérifier stabilisation</div><div class="cell">Mesurer qualité d'ouverture</div><div class="cell">Valider les sujets "save-worthy"</div><div class="cell">Repérer ce qui pousse au DM</div><div class="cell">Préparer scale W4</div>
     <div class="cell">4</div><div class="cell">Top du mois</div><div class="cell">Best performer vidéo</div><div class="cell">Best performer utile</div><div class="cell">Best performer viral</div><div class="cell">Bâtir mois 2</div>
   </div>
 </div></section>
 
 <section class="slide"><div class="wrap">
   <div class="topbar"><div class="brand">Decision Rules</div><div class="small">Slide 19</div></div>
-  <h2>Règles d’analyse : comment juger un post</h2>
+  <h2>Règles d'analyse : comment juger un post</h2>
   <div class="grid g2 section-gap">
     <div class="card big"><div class="kicker">Un post performant</div><div class="list"><div>Bon reach.</div><div>Bonne rétention.</div><div>Partages ou sauvegardes réels.</div><div>Follows attribuables au post.</div></div></div>
     <div class="card big"><div class="kicker">Un post à retravailler</div><div class="list"><div>Reach faible malgré bon sujet.</div><div>Hook trop lent ou trop flou.</div><div>Durée mal calibrée.</div><div>Fin trop faible pour déclencher action.</div></div></div>
@@ -395,10 +373,10 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <div class="topbar"><div class="brand">Hook Library</div><div class="small">Slide 20</div></div>
   <h2>Hooks à utiliser sur le mois</h2>
   <div class="hooks">
-    <div class="hook">Tu n’as pas besoin d’un endroit fou pour créer une belle vidéo.</div>
+    <div class="hook">Tu n'as pas besoin d'un endroit fou pour créer une belle vidéo.</div>
     <div class="hook">La vraie Australie est parfois <span class="accent">silencieuse</span>.</div>
     <div class="hook">Je vis dans un coin où il ne se passe presque rien.</div>
-    <div class="hook">C’est justement pour ça que j’ai appris à mieux <span class="accent">regarder</span>.</div>
+    <div class="hook">C'est justement pour ça que j'ai appris à mieux <span class="accent">regarder</span>.</div>
     <div class="hook">Ce que personne ne dit sur le PVT en région.</div>
     <div class="hook">1 lieu banal. 3 ambiances. 1 vidéo qui change tout.</div>
   </div>
@@ -409,10 +387,10 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <h2>Calendrier éditorial sur 4 semaines</h2>
   <div class="table t5 section-gap">
     <div class="cell head">Semaine</div><div class="cell head">Post 1</div><div class="cell head">Post 2</div><div class="cell head">Post 3</div><div class="cell head">Post 4</div>
-    <div class="cell">01</div><div class="cell">Une journée simple en PVT à Atherton</div><div class="cell">Comment rendre un lieu banal cinématique</div><div class="cell">Routine du matin en Australie</div><div class="cell">Pourquoi Atherton est calme, et pourquoi c’est une force</div>
+    <div class="cell">01</div><div class="cell">Une journée simple en PVT à Atherton</div><div class="cell">Comment rendre un lieu banal cinématique</div><div class="cell">Routine du matin en Australie</div><div class="cell">Pourquoi Atherton est calme, et pourquoi c'est une force</div>
     <div class="cell">02</div><div class="cell">3 plans Pocket 3 pour un rendu cinéma</div><div class="cell">Road mood pluie / golden hour</div><div class="cell">Petit spot à moins de 30 min</div><div class="cell">Ce que personne ne dit sur le PVT en région</div>
     <div class="cell">03</div><div class="cell">Combien coûte vraiment une semaine ici</div><div class="cell">Routine coucher de soleil / night mood</div><div class="cell">1 lieu, 3 ambiances, 3 montages</div><div class="cell">Pourquoi je montre peu mon visage</div>
-    <div class="cell">04</div><div class="cell">5 transitions simples à reproduire</div><div class="cell">Ce que la vie loin des villes m’a appris</div><div class="cell">ASMR pluie + nature + café</div><div class="cell">Bilan du mois : meilleur spot, meilleur mood, meilleure vidéo</div>
+    <div class="cell">04</div><div class="cell">5 transitions simples à reproduire</div><div class="cell">Ce que la vie loin des villes m'a appris</div><div class="cell">ASMR pluie + nature + café</div><div class="cell">Bilan du mois : meilleur spot, meilleur mood, meilleure vidéo</div>
   </div>
 </div></section>
 
@@ -430,10 +408,10 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
 
 <section class="slide"><div class="wrap">
   <div class="topbar"><div class="brand">Month 2 Forecast</div><div class="small">Slide 23</div></div>
-  <h2>Ce qu’on scale au mois 2</h2>
+  <h2>Ce qu'on scale au mois 2</h2>
   <div class="grid g3 section-gap">
     <div class="card big"><div class="kicker">Les sujets qui gagnent des saves</div><p>Ils deviennent des séries et des carrousels récurrents.</p></div>
-    <div class="card big"><div class="kicker">Les hooks qui retiennent</div><p>Ils deviennent le nouveau standard d’ouverture vidéo.</p></div>
+    <div class="card big"><div class="kicker">Les hooks qui retiennent</div><p>Ils deviennent le nouveau standard d'ouverture vidéo.</p></div>
     <div class="card big"><div class="kicker">Les formats qui font gagner des abonnés</div><p>Ils prennent plus de volume dans le mois suivant.</p></div>
   </div>
 </div></section>
@@ -442,7 +420,7 @@ hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(
   <div class="topbar"><div class="brand">Final Roadmap</div><div class="small">Slide 24</div></div>
   <h2>Conclusion opérationnelle</h2>
   <div class="grid g2 section-gap">
-    <div class="card big"><div class="quote">Le but n’est pas de poster plus. Le but est de créer une mécanique qui donne des signaux clairs.</div></div>
+    <div class="card big"><div class="quote">Le but n'est pas de poster plus. Le but est de créer une mécanique qui donne des signaux clairs.</div></div>
     <div class="card big"><div class="list"><div>Produire vite, mais publier propre.</div><div>Mesurer chaque semaine, pas au feeling.</div><div>Construire une image cohérente avant de chercher la viralité pure.</div><div>Répéter agressivement ce qui fonctionne.</div></div></div>
   </div>
 </div></section>
@@ -462,7 +440,7 @@ const dots=document.getElementById('dots');
 const count=document.getElementById('count');
 let idx=0;
 slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>go(i);dots.appendChild(d)});
-function render(){slides.forEach((s,i)=>s.classList.toggle('active',i===idx));[...dots.children].forEach((d,i)=>d.classList.toggle('active',i===idx));count.textContent=`${idx+1} / ${slides.length}`;window.scrollTo(0,0)}
+function render(){slides.forEach((s,i)=>s.classList.toggle('active',i===idx));[...dots.children].forEach((d,i)=>d.classList.toggle('active',i===idx));count.textContent=`${idx+1} / ${slides.length}`;document.documentElement.scrollTop=0;document.body.scrollTop=0;}
 function go(i){idx=(i+slides.length)%slides.length;render()}
 function move(step){go(idx+step)}
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();move(1)} if(e.key==='ArrowLeft'){e.preventDefault();move(-1)}});
