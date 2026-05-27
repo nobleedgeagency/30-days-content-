@@ -9,12 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0f0d16;--bg2:#151126;
-  --card:rgba(255,255,255,.04);--card2:rgba(255,255,255,.07);
-  --border:rgba(255,255,255,.08);
-  --text:#f7f7f7;--muted:#cbc7df;--soft:#8d87a3;
-  --purple:#7468ff;--shadow:0 24px 60px rgba(0,0,0,.28);
-  --green:#22c55e;
+  --bg:#0e0c0a;--bg2:#131109;
+  --card:rgba(255,248,235,.04);--card2:rgba(255,248,235,.07);
+  --border:rgba(255,248,235,.09);
+  --text:#f5f0e8;--muted:#d4c9b0;--soft:#9c9080;
+  --gold:#c9a96e;--gold2:#e8c98a;--goldalpha:rgba(201,169,110,.18);
+  --shadow:0 24px 60px rgba(0,0,0,.36);
+  --green:#4ade80;
 }
 *{box-sizing:border-box;max-width:100%}
 html{scroll-behavior:smooth}
@@ -27,44 +28,44 @@ p{color:var(--muted);line-height:1.65;font-size:clamp(14px,1.3vw,17px)}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px;width:100%}
 .section{padding:72px 0}
-#progress-bar{position:fixed;top:0;left:0;z-index:100;height:3px;width:0%;background:linear-gradient(90deg,var(--purple),#a78bfa);transition:width .1s linear;}
-nav{position:sticky;top:0;z-index:50;background:rgba(15,13,22,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:12px 20px;width:100%;}
+#progress-bar{position:fixed;top:0;left:0;z-index:100;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .1s linear;}
+nav{position:sticky;top:0;z-index:50;background:rgba(14,12,10,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:12px 20px;width:100%;}
 .nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
-.brand{flex-shrink:0;display:inline-flex;align-items:center;border:1px solid rgba(116,104,255,.32);background:rgba(116,104,255,.08);padding:7px 14px;border-radius:999px;color:#d9d6ff;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:background .18s;}
-.brand:hover{background:rgba(116,104,255,.2)}
+.brand{flex-shrink:0;display:inline-flex;align-items:center;border:1px solid rgba(201,169,110,.32);background:rgba(201,169,110,.08);padding:7px 14px;border-radius:999px;color:#e8d9b8;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:background .18s;}
+.brand:hover{background:rgba(201,169,110,.18)}
 .nav-links{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
 .nav-links a{font-size:12px;color:var(--soft);padding:6px 11px;border-radius:999px;border:1px solid transparent;font-weight:600;letter-spacing:.04em;transition:all .18s;white-space:nowrap;}
 .nav-links a:hover{color:var(--text);border-color:var(--border);background:var(--card)}
-.btn-pdf{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;border:1px solid rgba(116,104,255,.35);background:rgba(116,104,255,.14);color:#d9d6ff;font-size:11px;font-weight:700;letter-spacing:.1em;cursor:pointer;transition:all .18s;white-space:nowrap;}
-.btn-pdf:hover{background:rgba(116,104,255,.28)}
+.btn-pdf{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;border:1px solid rgba(201,169,110,.35);background:rgba(201,169,110,.1);color:#e8d9b8;font-size:11px;font-weight:700;letter-spacing:.1em;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.btn-pdf:hover{background:rgba(201,169,110,.22)}
 .lang-toggle{display:inline-flex;border-radius:999px;border:1px solid var(--border);overflow:hidden;flex-shrink:0;}
 .lang-btn{padding:7px 14px;font-size:11px;font-weight:800;cursor:pointer;border:none;background:transparent;color:var(--soft);transition:all .18s;letter-spacing:.1em;}
-.lang-btn.active{background:var(--purple);color:#fff;}
+.lang-btn.active{background:var(--gold);color:#0e0c0a;}
 .lang-btn:hover:not(.active){background:var(--card);color:var(--text);}
-.hero{padding:90px 20px 72px;background:radial-gradient(900px 500px at 90% 10%, rgba(116,104,255,.20), transparent 30%),radial-gradient(700px 380px at 8% 85%, rgba(95,88,150,.16), transparent 28%),linear-gradient(135deg,#0f0d16 0%,#120f1c 42%,#1d1931 100%);width:100%;}
+.hero{padding:90px 20px 72px;background:radial-gradient(900px 500px at 90% 10%, rgba(201,169,110,.13), transparent 30%),radial-gradient(700px 380px at 8% 85%, rgba(180,140,80,.10), transparent 28%),linear-gradient(135deg,#0e0c0a 0%,#110e08 42%,#1a1508 100%);width:100%;}
 .hero-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
 .small{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-bottom:12px}
 .hero-sub{font-size:clamp(14px,1.5vw,19px);color:var(--muted);margin-top:16px;line-height:1.55}
 .hero-cta{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
-.cta{padding:11px 20px;border-radius:999px;border:1px solid rgba(116,104,255,.35);background:rgba(116,104,255,.14);color:#d9d6ff;font-weight:700;font-size:14px;cursor:pointer;transition:all .18s;white-space:nowrap;}
-.cta:hover{background:rgba(116,104,255,.28)}
+.cta{padding:11px 20px;border-radius:999px;border:1px solid rgba(201,169,110,.35);background:rgba(201,169,110,.12);color:#e8d9b8;font-weight:700;font-size:14px;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.cta:hover{background:rgba(201,169,110,.24)}
 .cta.ghost{background:transparent;border-color:var(--border);color:var(--muted)}
 .cta.ghost:hover{background:var(--card);color:var(--text)}
 .handles{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
 .handle{display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.04em;transition:all .18s;}
-.handle:hover{border-color:rgba(116,104,255,.4);background:rgba(116,104,255,.1);color:var(--text)}
+.handle:hover{border-color:rgba(201,169,110,.4);background:rgba(201,169,110,.08);color:var(--text)}
 .handle .platform{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--soft)}
-.cover-box{padding:24px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border-radius:24px;box-shadow:var(--shadow);width:100%;}
+.cover-box{padding:24px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,248,235,.04),rgba(255,248,235,.01));border-radius:24px;box-shadow:var(--shadow);width:100%;}
 .mockfeed{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;}
-.tile{aspect-ratio:1/1;border-radius:14px;padding:10px;background:linear-gradient(160deg,#050507,#1e1830 55%,#514a88);border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;transition:border-color .18s,transform .18s;text-decoration:none;}
-.tile:hover{border-color:rgba(116,104,255,.5);transform:translateY(-2px)}
+.tile{aspect-ratio:1/1;border-radius:14px;padding:10px;background:linear-gradient(160deg,#080706,#1a1308 55%,#2e2210);border:1px solid rgba(255,248,235,.07);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;transition:border-color .18s,transform .18s;text-decoration:none;}
+.tile:hover{border-color:rgba(201,169,110,.5);transform:translateY(-2px)}
 .tile .t-label{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--soft);margin-bottom:4px;}
 .tile .t-handle{font-size:clamp(10px,1.1vw,13px);font-weight:800;color:var(--text);line-height:1.15;word-break:break-all;}
-.tile .t-handle span{color:var(--purple)}
+.tile .t-handle span{color:var(--gold)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;backdrop-filter:blur(10px)}
 .metric{font-size:clamp(26px,3vw,42px);font-weight:900;color:var(--text);margin-bottom:4px}
-.accent{color:var(--purple)}
+.accent{color:var(--gold)}
 .mini{font-size:11px;color:var(--soft);text-transform:uppercase;letter-spacing:.14em;margin-bottom:6px}
 .grid{display:grid;gap:16px}
 .g2{grid-template-columns:repeat(2,1fr)}
@@ -76,34 +77,34 @@ nav{position:sticky;top:0;z-index:50;background:rgba(15,13,22,.88);backdrop-filt
 .kicker{font-size:14px;font-weight:800;color:var(--text);margin-bottom:6px}
 .list{display:grid;gap:9px;margin-top:12px;padding:0}
 .list li{padding-left:17px;position:relative;color:var(--muted);line-height:1.5;list-style:none;font-size:clamp(13px,1.2vw,16px)}
-.list li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--purple)}
+.list li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
 .quote{font-size:clamp(18px,2.2vw,27px);line-height:1.2;font-weight:800;color:var(--text)}
-.badge{display:inline-block;padding:5px 11px;border-radius:999px;background:rgba(116,104,255,.12);border:1px solid rgba(116,104,255,.24);color:#dddafe;font-size:12px;font-weight:700}
-.alink{color:var(--purple);font-weight:700;transition:opacity .15s}
+.badge{display:inline-block;padding:5px 11px;border-radius:999px;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.24);color:#e8d9b8;font-size:12px;font-weight:700}
+.alink{color:var(--gold);font-weight:700;transition:opacity .15s}
 .alink:hover{opacity:.7}
 .livrable-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .livrable{padding:20px;border-radius:18px;background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column;gap:8px;}
 .livrable .l-icon{font-size:28px}
-.livrable .l-num{font-size:32px;font-weight:900;color:var(--purple)}
+.livrable .l-num{font-size:32px;font-weight:900;color:var(--gold)}
 .livrable .l-label{font-size:13px;font-weight:800;color:var(--text)}
 .livrable p{font-size:13px;margin:0}
 .target-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
-.target{padding:18px;border-radius:18px;background:linear-gradient(135deg,rgba(116,104,255,.1),rgba(116,104,255,.03));border:1px solid rgba(116,104,255,.2);text-align:center;}
+.target{padding:18px;border-radius:18px;background:linear-gradient(135deg,rgba(201,169,110,.10),rgba(201,169,110,.03));border:1px solid rgba(201,169,110,.2);text-align:center;}
 .target .t-val{font-size:clamp(22px,2.5vw,36px);font-weight:900;color:var(--text)}
-.target .t-val span{color:var(--purple)}
+.target .t-val span{color:var(--gold)}
 .target .t-desc{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--soft);margin-top:4px}
-.cta-section{padding:80px 20px;background:linear-gradient(135deg,rgba(116,104,255,.12),rgba(116,104,255,.04));border-top:1px solid rgba(116,104,255,.15);border-bottom:1px solid rgba(116,104,255,.15);text-align:center;}
+.cta-section{padding:80px 20px;background:linear-gradient(135deg,rgba(201,169,110,.10),rgba(201,169,110,.03));border-top:1px solid rgba(201,169,110,.14);border-bottom:1px solid rgba(201,169,110,.14);text-align:center;}
 .cta-section h2{margin-bottom:12px}
 .cta-section>div>p{max-width:560px;margin:0 auto 32px}
 .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn-main{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;background:var(--purple);color:#fff;font-weight:800;font-size:15px;border:none;cursor:pointer;transition:all .2s;text-decoration:none;}
-.btn-main:hover{background:#5a51e8;transform:translateY(-1px)}
+.btn-main{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;background:var(--gold);color:#0e0c0a;font-weight:800;font-size:15px;border:none;cursor:pointer;transition:all .2s;text-decoration:none;}
+.btn-main:hover{background:var(--gold2);transform:translateY(-1px)}
 .btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;background:transparent;color:var(--muted);font-weight:700;font-size:15px;border:1px solid var(--border);cursor:pointer;transition:all .2s;text-decoration:none;}
-.btn-secondary:hover{background:var(--card);color:var(--text);border-color:rgba(116,104,255,.3)}
-.btn-green{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;background:rgba(34,197,94,.15);color:#4ade80;font-weight:700;font-size:15px;border:1px solid rgba(34,197,94,.25);cursor:pointer;transition:all .2s;text-decoration:none;}
-.btn-green:hover{background:rgba(34,197,94,.25)}
+.btn-secondary:hover{background:var(--card);color:var(--text);border-color:rgba(201,169,110,.3)}
+.btn-green{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;background:rgba(74,222,128,.12);color:#4ade80;font-weight:700;font-size:15px;border:1px solid rgba(74,222,128,.22);cursor:pointer;transition:all .2s;text-decoration:none;}
+.btn-green:hover{background:rgba(74,222,128,.22)}
 .agency-card{display:flex;align-items:center;gap:24px;padding:28px;border-radius:24px;background:var(--card2);border:1px solid var(--border);flex-wrap:wrap;}
-.agency-avatar{width:72px;height:72px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--purple),#a78bfa);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;color:#fff;}
+.agency-avatar{width:72px;height:72px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#0e0c0a;}
 .agency-info{flex:1;min-width:200px}
 .agency-info .name{font-size:18px;font-weight:900;color:var(--text);margin-bottom:4px}
 .agency-info p{font-size:14px;margin:0}
@@ -111,16 +112,16 @@ nav{position:sticky;top:0;z-index:50;background:rgba(15,13,22,.88);backdrop-filt
 .sh .label{display:inline-block;margin-bottom:10px}
 .tbl-wrap{width:100%;overflow-x:auto;border-radius:20px;border:1px solid var(--border);box-shadow:var(--shadow);-webkit-overflow-scrolling:touch;}
 table{width:100%;border-collapse:collapse;background:var(--card);font-size:13px;min-width:480px}
-thead td,thead th{background:rgba(255,255,255,.03);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text);font-weight:800;padding:13px 15px;border-bottom:1px solid var(--border);}
+thead td,thead th{background:rgba(255,248,235,.03);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text);font-weight:800;padding:13px 15px;border-bottom:1px solid var(--border);}
 tbody td{padding:13px 15px;color:var(--muted);border-bottom:1px solid var(--border);line-height:1.45;vertical-align:top}
 tbody tr:last-child td{border-bottom:none}
 .hooks{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.hook{padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid var(--border);font-size:clamp(14px,1.6vw,19px);font-weight:800;line-height:1.18}
+.hook{padding:16px 18px;border-radius:16px;background:rgba(255,248,235,.03);border:1px solid var(--border);font-size:clamp(14px,1.6vw,19px);font-weight:800;line-height:1.18}
 .roadmap{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .step{padding:18px;border-radius:18px;background:var(--card);border:1px solid var(--border)}
-.step .num{font-size:24px;font-weight:900;color:var(--purple);margin-bottom:5px}
-hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(116,104,255,.7),transparent);margin:0}
-footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px;border-top:1px solid var(--border);background:rgba(0,0,0,.2);}
+.step .num{font-size:24px;font-weight:900;color:var(--gold);margin-bottom:5px}
+hr.sep{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,.5),transparent);margin:0}
+footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px;border-top:1px solid var(--border);background:rgba(0,0,0,.25);}
 .footer-logo{font-size:22px;font-weight:900;color:var(--text);letter-spacing:-.03em;margin-bottom:6px}
 .footer-tagline{font-size:13px;color:var(--soft);margin-bottom:20px}
 .footer-handles{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:12px 0 20px}
@@ -134,7 +135,7 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
   p,.list li{color:#444}
   .cover-box{display:block!important}
   footer{background:transparent;border-top:1px solid #ddd}
-  a{color:#7468ff}
+  a{color:#c9a96e}
   hr.sep{background:#ddd}
 }
 @media(max-width:900px){
@@ -201,8 +202,8 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="hero" id="top">
   <div class="hero-inner">
     <div>
-      <div class="small" data-fr="Enzo Panuela · France-facing growth system" data-en="Enzo Panuela · France-facing growth system">Enzo Panuela · France-facing growth system</div>
-      <h1 data-fr="30-Day<br>Content<br>Growth Plan" data-en="30-Day<br>Content<br>Growth Plan">30-Day<br>Content<br>Growth Plan</h1>
+      <div class="small" data-fr="Enzo Panuela · Système de croissance marché français" data-en="Enzo Panuela · France-facing growth system">Enzo Panuela · Système de croissance marché français</div>
+      <h1 data-fr="Plan de<br>Croissance<br>30 Jours" data-en="30-Day<br>Content<br>Growth Plan">Plan de<br>Croissance<br>30 Jours</h1>
       <p class="hero-sub" data-fr="Une stratégie éditoriale ultra précise pour faire grandir Instagram et TikTok avec une direction artistique cinématique, discrète et premium — cohérente avec l'univers Noble Edge." data-en="A highly precise editorial strategy to grow Instagram and TikTok with a cinematic, discreet and premium artistic direction — consistent with the Noble Edge universe.">Une stratégie éditoriale ultra précise pour faire grandir Instagram et TikTok avec une direction artistique cinématique, discrète et premium — cohérente avec l'univers Noble Edge.</p>
       <div class="handles">
         <a href="https://www.instagram.com/e.pnl" target="_blank" rel="noopener" class="handle"><span class="platform">Instagram</span> @e.pnl</a>
@@ -297,14 +298,14 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="section" id="resume">
   <div class="wrap">
     <div class="sh">
-      <span class="brand label" data-fr="Executive Summary" data-en="Executive Summary">Executive Summary</span>
+      <span class="brand label" data-fr="Synthèse exécutive" data-en="Executive Summary">Synthèse exécutive</span>
       <h2 data-fr="Ce que ce plan doit produire" data-en="What this plan must deliver">Ce que ce plan doit produire</h2>
     </div>
     <div class="grid g2">
       <div class="card hi big">
         <div class="quote" data-fr="Créer une présence immédiatement reconnaissable, pas juste publier plus." data-en="Build an immediately recognizable presence, not just post more.">Créer une présence immédiatement reconnaissable, pas juste publier plus.</div>
         <ul class="list">
-          <li data-fr="Une DA stable et cohérente sur tous les formats." data-en="A stable and consistent art direction across all formats.">Une DA stable et cohérente sur tous les formats.</li>
+          <li data-fr="Une direction artistique stable et cohérente sur tous les formats." data-en="A stable and consistent art direction across all formats.">Une direction artistique stable et cohérente sur tous les formats.</li>
           <li data-fr="Une grille de contenus répétable et mesurable." data-en="A repeatable and measurable content grid.">Une grille de contenus répétable et mesurable.</li>
           <li data-fr="Des sujets capables de générer sauvegardes, partages et abonnements." data-en="Topics capable of generating saves, shares and follows.">Des sujets capables de générer sauvegardes, partages et abonnements.</li>
         </ul>
@@ -314,7 +315,7 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
         <ul class="list">
           <li data-fr="12 Reels Instagram." data-en="12 Instagram Reels.">12 Reels Instagram.</li>
           <li data-fr="12 TikToks adaptés ou natifs." data-en="12 adapted or native TikToks.">12 TikToks adaptés ou natifs.</li>
-          <li data-fr="4 carrousels à sauvegarder." data-en="4 save-worthy carousels.">4 carrousels à sauvegarder.</li>
+          <li data-fr="4 carrousels à fort taux de sauvegarde." data-en="4 high save-rate carousels.">4 carrousels à fort taux de sauvegarde.</li>
           <li data-fr="Stories quotidiennes légères." data-en="Light daily Stories.">Stories quotidiennes légères.</li>
         </ul>
       </div>
@@ -328,16 +329,16 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="section" id="brand">
   <div class="wrap">
     <div class="sh">
-      <span class="brand label" data-fr="Brand DNA" data-en="Brand DNA">Brand DNA</span>
-      <h2 data-fr="ADN de marque" data-en="Brand Identity">ADN de marque</h2>
+      <span class="brand label" data-fr="ADN de marque" data-en="Brand DNA">ADN de marque</span>
+      <h2 data-fr="Les 6 piliers identitaires" data-en="Brand Identity">Les 6 piliers identitaires</h2>
     </div>
     <div class="grid g3">
-      <div class="card"><div class="kicker" data-fr="Cinematic" data-en="Cinematic">Cinematic</div><p data-fr="Images lentes, respiration, lumière naturelle, cuts propres, sons ambiants." data-en="Slow shots, breathing space, natural light, clean cuts, ambient sounds.">Images lentes, respiration, lumière naturelle, cuts propres, sons ambiants.</p></div>
-      <div class="card"><div class="kicker" data-fr="Quiet" data-en="Quiet">Quiet</div><p data-fr="Peu de visage, peu d'agitation, beaucoup de regard, d'espace et de détail." data-en="Minimal face, minimal agitation, lots of gaze, space and detail.">Peu de visage, peu d'agitation, beaucoup de regard, d'espace et de détail.</p></div>
+      <div class="card"><div class="kicker" data-fr="Cinématique" data-en="Cinematic">Cinématique</div><p data-fr="Images lentes, respiration, lumière naturelle, cuts propres, sons ambiants." data-en="Slow shots, breathing space, natural light, clean cuts, ambient sounds.">Images lentes, respiration, lumière naturelle, cuts propres, sons ambiants.</p></div>
+      <div class="card"><div class="kicker" data-fr="Silencieux" data-en="Quiet">Silencieux</div><p data-fr="Peu de visage, peu d'agitation, beaucoup de regard, d'espace et de détail." data-en="Minimal face, minimal agitation, lots of gaze, space and detail.">Peu de visage, peu d'agitation, beaucoup de regard, d'espace et de détail.</p></div>
       <div class="card"><div class="kicker" data-fr="Premium" data-en="Premium">Premium</div><p data-fr="Rendu sombre, typographie forte, structure claire, exécution précise." data-en="Dark render, strong typography, clear structure, precise execution.">Rendu sombre, typographie forte, structure claire, exécution précise.</p></div>
-      <div class="card"><div class="kicker" data-fr="Intentional" data-en="Intentional">Intentional</div><p data-fr="Chaque plan doit servir une sensation ou une idée, pas juste remplir." data-en="Every shot must serve a feeling or an idea, not just fill space.">Chaque plan doit servir une sensation ou une idée, pas juste remplir.</p></div>
-      <div class="card"><div class="kicker" data-fr="French-facing" data-en="French-facing">French-facing</div><p data-fr="Hooks, sous-titres et narration pensés pour une audience française." data-en="Hooks, subtitles and narration crafted for a French-speaking audience.">Hooks, sous-titres et narration pensés pour une audience française.</p></div>
-      <div class="card"><div class="kicker" data-fr="Journal-based" data-en="Journal-based">Journal-based</div><p data-fr="Vrai vécu de PVT, pas un simple décor de voyage générique." data-en="Real WHV experience, not just generic travel scenery.">Vrai vécu de PVT, pas un simple décor de voyage générique.</p></div>
+      <div class="card"><div class="kicker" data-fr="Intentionnel" data-en="Intentional">Intentionnel</div><p data-fr="Chaque plan doit servir une sensation ou une idée, pas juste remplir." data-en="Every shot must serve a feeling or an idea, not just fill space.">Chaque plan doit servir une sensation ou une idée, pas juste remplir.</p></div>
+      <div class="card"><div class="kicker" data-fr="Marché français" data-en="French-facing">Marché français</div><p data-fr="Hooks, sous-titres et narration pensés pour une audience française." data-en="Hooks, subtitles and narration crafted for a French-speaking audience.">Hooks, sous-titres et narration pensés pour une audience française.</p></div>
+      <div class="card"><div class="kicker" data-fr="Journal de voyage" data-en="Journal-based">Journal de voyage</div><p data-fr="Vrai vécu de PVT, pas un simple décor de voyage générique." data-en="Real WHV experience, not just generic travel scenery.">Vrai vécu de PVT, pas un simple décor de voyage générique.</p></div>
     </div>
   </div>
 </section>
@@ -355,7 +356,7 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
       <div class="card big">
         <div class="kicker" data-fr="Profil principal" data-en="Primary profile">Profil principal</div>
         <ul class="list">
-          <li data-fr="18-34 ans, France, Instagram et TikTok natifs." data-en="18-34 y/o, France, native Instagram and TikTok users.">18-34 ans, France, Instagram et TikTok natifs.</li>
+          <li data-fr="18-34 ans, France, utilisateurs natifs Instagram et TikTok." data-en="18-34 y/o, France, native Instagram and TikTok users.">18-34 ans, France, utilisateurs natifs Instagram et TikTok.</li>
           <li data-fr="Intérêt pour le voyage, l'Australie, le PVT, la liberté, la narration visuelle." data-en="Interest in travel, Australia, WHV, freedom, visual storytelling.">Intérêt pour le voyage, l'Australie, le PVT, la liberté, la narration visuelle.</li>
           <li data-fr="Sensibles aux contenus immersifs et aux montages propres." data-en="Drawn to immersive content and clean edits.">Sensibles aux contenus immersifs et aux montages propres.</li>
         </ul>
@@ -370,7 +371,7 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
       </div>
     </div>
     <div class="card hi big" style="margin-top:16px">
-      <div class="quote" data-fr="Cinematic PVT Diary for French viewers." data-en="Cinematic WHV Diary for French viewers.">Cinematic PVT Diary for French viewers.</div>
+      <div class="quote" data-fr="Journal de PVT cinématique — pour les Français." data-en="Cinematic WHV Diary — for French viewers.">Journal de PVT cinématique — pour les Français.</div>
       <div class="grid g3" style="margin-top:18px">
         <div><span class="badge" data-fr="Pas un vlog" data-en="Not a vlog">Pas un vlog</span><p style="margin-top:10px" data-fr='On évite l'énergie "je raconte tout face caméra".' data-en='Avoid the "talking head" energy.'>On évite l'énergie "je raconte tout face caméra".</p></div>
         <div><span class="badge" data-fr="Pas un compte d'info pur" data-en="Not a pure info account">Pas un compte d'info pur</span><p style="margin-top:10px" data-fr="On ne devient pas une FAQ PVT impersonnelle." data-en="We don't become an impersonal WHV FAQ page.">On ne devient pas une FAQ PVT impersonnelle.</p></div>
@@ -386,7 +387,7 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="section" id="benchmark">
   <div class="wrap">
     <div class="sh">
-      <span class="brand label" data-fr="Competitive Analysis" data-en="Competitive Analysis">Competitive Analysis</span>
+      <span class="brand label" data-fr="Analyse concurrentielle" data-en="Competitive Analysis">Analyse concurrentielle</span>
       <h2 data-fr="Benchmark & opportunité" data-en="Benchmark & opportunity">Benchmark & opportunité</h2>
     </div>
     <div class="tbl-wrap">
@@ -409,19 +410,19 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="section" id="piliers">
   <div class="wrap">
     <div class="sh">
-      <span class="brand label" data-fr="Content System" data-en="Content System">Content System</span>
+      <span class="brand label" data-fr="Système de contenu" data-en="Content System">Système de contenu</span>
       <h2 data-fr="Les 4 piliers éditoriaux" data-en="The 4 editorial pillars">Les 4 piliers éditoriaux</h2>
     </div>
     <div class="grid g4">
       <div class="card"><div class="kicker" data-fr="01 · Voyage cinématique" data-en="01 · Cinematic travel">01 · Voyage cinématique</div><p data-fr="Atmosphère, météo, paysages simples, lumière, marche, café, texture." data-en="Atmosphere, weather, simple landscapes, light, walking, coffee, texture.">Atmosphère, météo, paysages simples, lumière, marche, café, texture.</p></div>
       <div class="card"><div class="kicker" data-fr="02 · Journal de PVT" data-en="02 · WHV Journal">02 · Journal de PVT</div><p data-fr="Routine, budget, isolement, liberté, fatigue, discipline, vérité terrain." data-en="Routine, budget, isolation, freedom, fatigue, discipline, real-life truth.">Routine, budget, isolement, liberté, fatigue, discipline, vérité terrain.</p></div>
-      <div class="card"><div class="kicker" data-fr="03 · Insight / réflexion" data-en="03 · Insight / reflection">03 · Insight / réflexion</div><p data-fr="Phrases fortes, pensées courtes, leçons, nuances sur la vie à l'étranger." data-en="Strong lines, short thoughts, lessons, nuances of life abroad.">Phrases fortes, pensées courtes, leçons, nuances sur la vie à l'étranger.</p></div>
-      <div class="card"><div class="kicker" data-fr="04 · Behind the craft" data-en="04 · Behind the craft">04 · Behind the craft</div><p data-fr="Plans, montage, son, workflow créatif et comment un lieu banal devient cinématique." data-en="Shots, editing, sound, creative workflow and how a plain location becomes cinematic.">Plans, montage, son, workflow créatif et comment un lieu banal devient cinématique.</p></div>
+      <div class="card"><div class="kicker" data-fr="03 · Réflexion & vécu" data-en="03 · Insight / reflection">03 · Réflexion & vécu</div><p data-fr="Phrases fortes, pensées courtes, leçons, nuances sur la vie à l'étranger." data-en="Strong lines, short thoughts, lessons, nuances of life abroad.">Phrases fortes, pensées courtes, leçons, nuances sur la vie à l'étranger.</p></div>
+      <div class="card"><div class="kicker" data-fr="04 · Dans les coulisses" data-en="04 · Behind the craft">04 · Dans les coulisses</div><p data-fr="Plans, montage, son, workflow créatif et comment un lieu banal devient cinématique." data-en="Shots, editing, sound, creative workflow and how a plain location becomes cinematic.">Plans, montage, son, workflow créatif et comment un lieu banal devient cinématique.</p></div>
     </div>
     <div class="grid g4" style="margin-top:16px">
       <div class="card big"><div class="metric accent">60%</div><div class="kicker" data-fr="Reels / TikToks narratifs" data-en="Narrative Reels / TikToks">Reels / TikToks narratifs</div><p data-fr="Les vidéos qui font ressentir une ambiance et racontent une idée." data-en="Videos that convey a mood and tell an idea.">Les vidéos qui font ressentir une ambiance et racontent une idée.</p></div>
       <div class="card big"><div class="metric accent">20%</div><div class="kicker" data-fr="Contenu PVT utile" data-en="Useful WHV content">Contenu PVT utile</div><p data-fr="Budget, routine, attentes vs réalité, questions que les Français se posent." data-en="Budget, routine, expectations vs reality, questions French people ask.">Budget, routine, attentes vs réalité, questions que les Français se posent.</p></div>
-      <div class="card big"><div class="metric accent">10%</div><div class="kicker" data-fr="How I shot this" data-en="How I shot this">How I shot this</div><p data-fr="Montrer le craft sans devenir un compte purement technique." data-en="Show the craft without becoming a purely technical account.">Montrer le craft sans devenir un compte purement technique.</p></div>
+      <div class="card big"><div class="metric accent">10%</div><div class="kicker" data-fr="Comment j'ai filmé ça" data-en="How I shot this">Comment j'ai filmé ça</div><p data-fr="Montrer le craft sans devenir un compte purement technique." data-en="Show the craft without becoming a purely technical account.">Montrer le craft sans devenir un compte purement technique.</p></div>
       <div class="card big"><div class="metric accent">10%</div><div class="kicker" data-fr="Carrousels premium" data-en="Premium carousels">Carrousels premium</div><p data-fr="Hooks texte, synthèses et posts à sauvegarder." data-en="Text hooks, summaries and save-worthy posts.">Hooks texte, synthèses et posts à sauvegarder.</p></div>
     </div>
   </div>
@@ -433,15 +434,15 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="section" id="calendar">
   <div class="wrap">
     <div class="sh">
-      <span class="brand label" data-fr="Editorial Calendar" data-en="Editorial Calendar">Editorial Calendar</span>
+      <span class="brand label" data-fr="Calendrier éditorial" data-en="Editorial Calendar">Calendrier éditorial</span>
       <h2 data-fr="Calendrier éditorial sur 4 semaines" data-en="4-Week editorial calendar">Calendrier éditorial sur 4 semaines</h2>
     </div>
     <div class="roadmap" style="margin-bottom:24px">
-      <div class="step"><div class="num">W1</div><div class="kicker" data-fr="Identity" data-en="Identity">Identity</div><p data-fr="Installer l'univers, le rythme, la voix et la promesse." data-en="Establish the universe, rhythm, voice and promise.">Installer l'univers, le rythme, la voix et la promesse.</p></div>
-      <div class="step"><div class="num">W2</div><div class="kicker" data-fr="Reality" data-en="Reality">Reality</div><p data-fr="Montrer la vraie vie de PVT sans casser l'image premium." data-en="Show real WHV life without breaking the premium image.">Montrer la vraie vie de PVT sans casser l'image premium.</p></div>
-      <div class="step"><div class="num">W3</div><div class="kicker" data-fr="Craft" data-en="Craft">Craft</div><p data-fr="Faire monter la crédibilité créative et la répétition visuelle." data-en="Build creative credibility and visual consistency.">Faire monter la crédibilité créative et la répétition visuelle.</p></div>
-      <div class="step"><div class="num">W4</div><div class="kicker" data-fr="Scale" data-en="Scale">Scale</div><p data-fr="Doubler les sujets qui ont déjà montré des signaux forts." data-en="Double down on topics that already showed strong signals.">Doubler les sujets qui ont déjà montré des signaux forts.</p></div>
-      <div class="step"><div class="num">30D</div><div class="kicker" data-fr="Review" data-en="Review">Review</div><p data-fr="Analyser et préparer le mois 2 avec les meilleures mécaniques." data-en="Analyze and prepare month 2 with the best-performing mechanics.">Analyser et préparer le mois 2 avec les meilleures mécaniques.</p></div>
+      <div class="step"><div class="num">S1</div><div class="kicker" data-fr="Identité" data-en="Identity">Identité</div><p data-fr="Installer l'univers, le rythme, la voix et la promesse." data-en="Establish the universe, rhythm, voice and promise.">Installer l'univers, le rythme, la voix et la promesse.</p></div>
+      <div class="step"><div class="num">S2</div><div class="kicker" data-fr="Réalité" data-en="Reality">Réalité</div><p data-fr="Montrer la vraie vie de PVT sans casser l'image premium." data-en="Show real WHV life without breaking the premium image.">Montrer la vraie vie de PVT sans casser l'image premium.</p></div>
+      <div class="step"><div class="num">S3</div><div class="kicker" data-fr="Maîtrise" data-en="Craft">Maîtrise</div><p data-fr="Faire monter la crédibilité créative et la répétition visuelle." data-en="Build creative credibility and visual consistency.">Faire monter la crédibilité créative et la répétition visuelle.</p></div>
+      <div class="step"><div class="num">S4</div><div class="kicker" data-fr="Amplification" data-en="Scale">Amplification</div><p data-fr="Doubler les sujets qui ont déjà montré des signaux forts." data-en="Double down on topics that already showed strong signals.">Doubler les sujets qui ont déjà montré des signaux forts.</p></div>
+      <div class="step"><div class="num">J30</div><div class="kicker" data-fr="Bilan" data-en="Review">Bilan</div><p data-fr="Analyser et préparer le mois 2 avec les meilleures mécaniques." data-en="Analyze and prepare month 2 with the best-performing mechanics.">Analyser et préparer le mois 2 avec les meilleures mécaniques.</p></div>
     </div>
     <div class="tbl-wrap">
       <table>
@@ -464,7 +465,7 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
           <tr>
             <td><strong style="color:var(--text)">03</strong></td>
             <td data-fr="Combien coûte vraiment une semaine ici" data-en="What a week here really costs">Combien coûte vraiment une semaine ici</td>
-            <td data-fr="Routine coucher de soleil / night mood" data-en="Sunset routine / night mood">Routine coucher de soleil / night mood</td>
+            <td data-fr="Routine coucher de soleil / ambiance nuit" data-en="Sunset routine / night mood">Routine coucher de soleil / ambiance nuit</td>
             <td data-fr="1 lieu, 3 ambiances, 3 montages" data-en="1 location, 3 moods, 3 edits">1 lieu, 3 ambiances, 3 montages</td>
             <td data-fr="Pourquoi je montre peu mon visage" data-en="Why I rarely show my face">Pourquoi je montre peu mon visage</td>
           </tr>
@@ -487,7 +488,7 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="section" id="hooks">
   <div class="wrap">
     <div class="sh">
-      <span class="brand label" data-fr="Hook Library" data-en="Hook Library">Hook Library</span>
+      <span class="brand label" data-fr="Bibliothèque de hooks" data-en="Hook Library">Bibliothèque de hooks</span>
       <h2 data-fr="Hooks à utiliser sur le mois" data-en="Hooks to use this month">Hooks à utiliser sur le mois</h2>
     </div>
     <div class="hooks">
@@ -507,7 +508,7 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="section" id="horaires">
   <div class="wrap">
     <div class="sh">
-      <span class="brand label" data-fr="Posting Windows" data-en="Posting Windows">Posting Windows</span>
+      <span class="brand label" data-fr="Fenêtres de publication" data-en="Posting Windows">Fenêtres de publication</span>
       <h2 data-fr="Horaires de diffusion" data-en="Publishing schedule">Horaires de diffusion</h2>
     </div>
     <div class="tbl-wrap">
@@ -531,30 +532,30 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="section" id="kpis">
   <div class="wrap">
     <div class="sh">
-      <span class="brand label" data-fr="KPI Framework" data-en="KPI Framework">KPI Framework</span>
+      <span class="brand label" data-fr="Indicateurs de performance" data-en="KPI Framework">Indicateurs de performance</span>
       <h2 data-fr="Métriques à suivre" data-en="Metrics to track">Métriques à suivre</h2>
     </div>
     <div class="grid g2">
       <div>
         <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:12px">Instagram</p>
         <div class="grid g3">
-          <div class="card"><div class="kicker">Reach</div><p data-fr="Ampleur réelle de distribution." data-en="Real distribution reach.">Ampleur réelle de distribution.</p></div>
-          <div class="card"><div class="kicker">Saves</div><p data-fr="Signal fort d'utilité et valeur perçue." data-en="Strong signal of utility and perceived value.">Signal fort d'utilité et valeur perçue.</p></div>
-          <div class="card"><div class="kicker" data-fr="Follows / post" data-en="Follows / post">Follows / post</div><p data-fr="Capacité à convertir l'attention." data-en="Ability to convert attention.">Capacité à convertir l'attention.</p></div>
-          <div class="card"><div class="kicker" data-fr="Engagement rate" data-en="Engagement rate">Engagement rate</div><p data-fr="Résonance du contenu." data-en="Content resonance.">Résonance du contenu.</p></div>
-          <div class="card"><div class="kicker" data-fr="Shares / Sends" data-en="Shares / Sends">Shares / Sends</div><p data-fr="Diffusion au-delà du premier cercle." data-en="Distribution beyond the first circle.">Diffusion au-delà du premier cercle.</p></div>
-          <div class="card"><div class="kicker" data-fr="Profile visits" data-en="Profile visits">Profile visits</div><p data-fr="Le hook pousse-t-il à explorer ?" data-en="Does the hook drive profile exploration?">Le hook pousse-t-il à explorer ?</p></div>
+          <div class="card"><div class="kicker" data-fr="Portée" data-en="Reach">Portée</div><p data-fr="Ampleur réelle de distribution." data-en="Real distribution reach.">Ampleur réelle de distribution.</p></div>
+          <div class="card"><div class="kicker" data-fr="Sauvegardes" data-en="Saves">Sauvegardes</div><p data-fr="Signal fort d'utilité et valeur perçue." data-en="Strong signal of utility and perceived value.">Signal fort d'utilité et valeur perçue.</p></div>
+          <div class="card"><div class="kicker" data-fr="Abonnés / post" data-en="Follows / post">Abonnés / post</div><p data-fr="Capacité à convertir l'attention." data-en="Ability to convert attention.">Capacité à convertir l'attention.</p></div>
+          <div class="card"><div class="kicker" data-fr="Taux d'engagement" data-en="Engagement rate">Taux d'engagement</div><p data-fr="Résonance du contenu." data-en="Content resonance.">Résonance du contenu.</p></div>
+          <div class="card"><div class="kicker" data-fr="Partages / Envois" data-en="Shares / Sends">Partages / Envois</div><p data-fr="Diffusion au-delà du premier cercle." data-en="Distribution beyond the first circle.">Diffusion au-delà du premier cercle.</p></div>
+          <div class="card"><div class="kicker" data-fr="Visites profil" data-en="Profile visits">Visites profil</div><p data-fr="Le hook pousse-t-il à explorer ?" data-en="Does the hook drive profile exploration?">Le hook pousse-t-il à explorer ?</p></div>
         </div>
       </div>
       <div>
         <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:12px">TikTok</p>
         <div class="grid g3">
-          <div class="card"><div class="kicker">Views</div><p data-fr="Base de visibilité." data-en="Visibility baseline.">Base de visibilité.</p></div>
-          <div class="card"><div class="kicker" data-fr="Watch time" data-en="Watch time">Watch time</div><p data-fr="Qualité du montage et narration." data-en="Edit quality and narration.">Qualité du montage et narration.</p></div>
-          <div class="card"><div class="kicker" data-fr="Completion" data-en="Completion">Completion</div><p data-fr="Structure vidéo bien calibrée." data-en="Well-calibrated video structure.">Structure vidéo bien calibrée.</p></div>
-          <div class="card"><div class="kicker">Shares</div><p data-fr="Viralité qualitative." data-en="Qualitative virality.">Viralité qualitative.</p></div>
-          <div class="card"><div class="kicker">Saves</div><p data-fr="Intérêt durable du contenu." data-en="Lasting content interest.">Intérêt durable du contenu.</p></div>
-          <div class="card"><div class="kicker">Followers</div><p data-fr="Portée → croissance réelle." data-en="Reach → real growth.">Portée → croissance réelle.</p></div>
+          <div class="card"><div class="kicker" data-fr="Vues" data-en="Views">Vues</div><p data-fr="Base de visibilité." data-en="Visibility baseline.">Base de visibilité.</p></div>
+          <div class="card"><div class="kicker" data-fr="Temps de visionnage" data-en="Watch time">Temps de visionnage</div><p data-fr="Qualité du montage et narration." data-en="Edit quality and narration.">Qualité du montage et narration.</p></div>
+          <div class="card"><div class="kicker" data-fr="Complétion" data-en="Completion">Complétion</div><p data-fr="Structure vidéo bien calibrée." data-en="Well-calibrated video structure.">Structure vidéo bien calibrée.</p></div>
+          <div class="card"><div class="kicker" data-fr="Partages" data-en="Shares">Partages</div><p data-fr="Viralité qualitative." data-en="Qualitative virality.">Viralité qualitative.</p></div>
+          <div class="card"><div class="kicker" data-fr="Sauvegardes" data-en="Saves">Sauvegardes</div><p data-fr="Intérêt durable du contenu." data-en="Lasting content interest.">Intérêt durable du contenu.</p></div>
+          <div class="card"><div class="kicker" data-fr="Abonnés" data-en="Followers">Abonnés</div><p data-fr="Portée → croissance réelle." data-en="Reach → real growth.">Portée → croissance réelle.</p></div>
         </div>
       </div>
     </div>
@@ -567,15 +568,15 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="section" id="workflow">
   <div class="wrap">
     <div class="sh">
-      <span class="brand label" data-fr="Workflow" data-en="Workflow">Workflow</span>
+      <span class="brand label" data-fr="Processus de création" data-en="Workflow">Processus de création</span>
       <h2 data-fr="Production → Publication → Analyse" data-en="Production → Publishing → Analysis">Production → Publication → Analyse</h2>
     </div>
     <div class="roadmap">
-      <div class="step"><div class="num">01</div><div class="kicker" data-fr="Shoot" data-en="Shoot">Shoot</div><p data-fr="2 sessions par semaine, lever et fin de journée." data-en="2 sessions per week, sunrise and end of day.">2 sessions par semaine, lever et fin de journée.</p></div>
-      <div class="step"><div class="num">02</div><div class="kicker" data-fr="Select" data-en="Select">Select</div><p data-fr="Choisir les plans les plus propres et les plus calmes." data-en="Pick the cleanest and calmest shots.">Choisir les plans les plus propres et les plus calmes.</p></div>
-      <div class="step"><div class="num">03</div><div class="kicker" data-fr="Edit" data-en="Edit">Edit</div><p data-fr="Montage sombre, net, peu saturé, hook visible immédiatement." data-en="Dark, clean, low saturation edit, hook visible immediately.">Montage sombre, net, peu saturé, hook visible immédiatement.</p></div>
-      <div class="step"><div class="num">04</div><div class="kicker" data-fr="Post" data-en="Post">Post</div><p data-fr="Publier aux créneaux France convertis pour Atherton." data-en="Publish at France slots converted for Atherton.">Publier aux créneaux France convertis pour Atherton.</p></div>
-      <div class="step"><div class="num">05</div><div class="kicker" data-fr="Review" data-en="Review">Review</div><p data-fr="Mesurer, noter, répéter ce qui fonctionne vraiment." data-en="Measure, note, repeat what actually works.">Mesurer, noter, répéter ce qui fonctionne vraiment.</p></div>
+      <div class="step"><div class="num">01</div><div class="kicker" data-fr="Tournage" data-en="Shoot">Tournage</div><p data-fr="2 sessions par semaine, lever et fin de journée." data-en="2 sessions per week, sunrise and end of day.">2 sessions par semaine, lever et fin de journée.</p></div>
+      <div class="step"><div class="num">02</div><div class="kicker" data-fr="Sélection" data-en="Select">Sélection</div><p data-fr="Choisir les plans les plus propres et les plus calmes." data-en="Pick the cleanest and calmest shots.">Choisir les plans les plus propres et les plus calmes.</p></div>
+      <div class="step"><div class="num">03</div><div class="kicker" data-fr="Montage" data-en="Edit">Montage</div><p data-fr="Rendu sombre, net, peu saturé, hook visible immédiatement." data-en="Dark, clean, low saturation edit, hook visible immediately.">Rendu sombre, net, peu saturé, hook visible immédiatement.</p></div>
+      <div class="step"><div class="num">04</div><div class="kicker" data-fr="Publication" data-en="Post">Publication</div><p data-fr="Publier aux créneaux France convertis pour Atherton." data-en="Publish at France slots converted for Atherton.">Publier aux créneaux France convertis pour Atherton.</p></div>
+      <div class="step"><div class="num">05</div><div class="kicker" data-fr="Analyse" data-en="Review">Analyse</div><p data-fr="Mesurer, noter, répéter ce qui fonctionne vraiment." data-en="Measure, note, repeat what actually works.">Mesurer, noter, répéter ce qui fonctionne vraiment.</p></div>
     </div>
   </div>
 </section>
@@ -586,11 +587,11 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 <section class="section" id="conclusion">
   <div class="wrap">
     <div class="sh">
-      <span class="brand label" data-fr="Conclusion" data-en="Conclusion">Conclusion</span>
+      <span class="brand label" data-fr="Ce qui vient ensuite" data-en="What comes next">Ce qui vient ensuite</span>
       <h2 data-fr="Ce qu'on scale au mois 2" data-en="What we scale in month 2">Ce qu'on scale au mois 2</h2>
     </div>
     <div class="grid g3" style="margin-bottom:16px">
-      <div class="card big"><div class="kicker" data-fr="Les sujets qui gagnent des saves" data-en="Topics that earn saves">Les sujets qui gagnent des saves</div><p data-fr="Ils deviennent des séries et des carrousels récurrents." data-en="They become recurring series and carousels.">Ils deviennent des séries et des carrousels récurrents.</p></div>
+      <div class="card big"><div class="kicker" data-fr="Les sujets qui gagnent des sauvegardes" data-en="Topics that earn saves">Les sujets qui gagnent des sauvegardes</div><p data-fr="Ils deviennent des séries et des carrousels récurrents." data-en="They become recurring series and carousels.">Ils deviennent des séries et des carrousels récurrents.</p></div>
       <div class="card big"><div class="kicker" data-fr="Les hooks qui retiennent" data-en="Hooks that retain">Les hooks qui retiennent</div><p data-fr="Ils deviennent le nouveau standard d'ouverture vidéo." data-en="They become the new standard video opening.">Ils deviennent le nouveau standard d'ouverture vidéo.</p></div>
       <div class="card big"><div class="kicker" data-fr="Les formats qui font gagner des abonnés" data-en="Formats that drive follows">Les formats qui font gagner des abonnés</div><p data-fr="Ils prennent plus de volume dans le mois suivant." data-en="They get more volume in the following month.">Ils prennent plus de volume dans le mois suivant.</p></div>
     </div>
@@ -661,7 +662,6 @@ footer{padding:48px 20px 36px;text-align:center;color:var(--soft);font-size:13px
 </footer>
 
 <script>
-// Barre de progression
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -669,12 +669,10 @@ window.addEventListener('scroll', () => {
   document.getElementById('progress-bar').style.width = progress + '%';
 });
 
-// Système de traduction
 function setLang(lang) {
   document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.documentElement.lang = lang;
-
   document.querySelectorAll('[data-fr][data-en]').forEach(el => {
     const val = el.getAttribute('data-' + lang);
     if (val !== null) el.innerHTML = val;
