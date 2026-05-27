@@ -56,7 +56,9 @@ nav{
   padding:7px 14px;border-radius:999px;
   color:#d9d6ff;font-size:11px;font-weight:700;
   letter-spacing:.16em;text-transform:uppercase;
+  transition:background .18s;
 }
+.brand:hover{background:rgba(116,104,255,.2)}
 .nav-links{display:flex;gap:4px;flex-wrap:wrap}
 .nav-links a{
   font-size:12px;color:var(--soft);padding:6px 11px;
@@ -92,18 +94,17 @@ nav{
 .cta.ghost{background:transparent;border-color:var(--border);color:var(--muted)}
 .cta.ghost:hover{background:var(--card);color:var(--text)}
 
-/* handles client */
 .handles{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
 .handle{
   display:inline-flex;align-items:center;gap:6px;
   padding:6px 13px;border-radius:999px;
   border:1px solid var(--border);background:var(--card);
   font-size:12px;font-weight:700;color:var(--muted);
-  letter-spacing:.04em;
+  letter-spacing:.04em;transition:all .18s;
 }
+.handle:hover{border-color:rgba(116,104,255,.4);background:rgba(116,104,255,.1);color:var(--text)}
 .handle .platform{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--soft)}
 
-/* cover box / ref grid */
 .cover-box{
   padding:24px;
   border:1px solid var(--border);
@@ -120,8 +121,10 @@ nav{
   background:linear-gradient(160deg,#050507,#1e1830 55%,#514a88);
   border:1px solid rgba(255,255,255,.08);
   display:flex;flex-direction:column;justify-content:flex-end;
-  overflow:hidden;
+  overflow:hidden;transition:border-color .18s,transform .18s;
+  text-decoration:none;
 }
+.tile:hover{border-color:rgba(116,104,255,.5);transform:translateY(-2px)}
 .tile .t-label{
   font-size:9px;text-transform:uppercase;letter-spacing:.12em;
   color:var(--soft);margin-bottom:4px;
@@ -151,6 +154,10 @@ nav{
 .list li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--purple)}
 .quote{font-size:clamp(18px,2.2vw,27px);line-height:1.2;font-weight:800;color:var(--text)}
 .badge{display:inline-block;padding:5px 11px;border-radius:999px;background:rgba(116,104,255,.12);border:1px solid rgba(116,104,255,.24);color:#dddafe;font-size:12px;font-weight:700}
+
+/* lien inline dans les tableaux */
+.alink{color:var(--purple);font-weight:700;transition:opacity .15s}
+.alink:hover{opacity:.7}
 
 .sh{margin-bottom:28px}
 .sh .label{display:inline-block;margin-bottom:10px}
@@ -221,7 +228,7 @@ footer{padding:36px 20px;text-align:center;color:var(--soft);font-size:13px;bord
 
 <nav>
   <div class="nav-inner">
-    <div class="brand">@nobleedge.agency</div>
+    <a href="https://www.instagram.com/nobleedge.agency" target="_blank" rel="noopener" class="brand">@nobleedge.agency</a>
     <div class="nav-links">
       <a href="#resume">Résumé</a>
       <a href="#brand">Brand DNA</a>
@@ -241,8 +248,12 @@ footer{padding:36px 20px;text-align:center;color:var(--soft);font-size:13px;bord
       <h1>30-Day<br>Content<br>Growth Plan</h1>
       <p class="hero-sub">Une stratégie éditoriale ultra précise pour faire grandir Instagram et TikTok avec une direction artistique cinématique, discrète et premium — cohérente avec l'univers Noble Edge.</p>
       <div class="handles">
-        <div class="handle"><span class="platform">Instagram</span> @e.pnl</div>
-        <div class="handle"><span class="platform">TikTok</span> @enzo.panuela</div>
+        <a href="https://www.instagram.com/e.pnl" target="_blank" rel="noopener" class="handle">
+          <span class="platform">Instagram</span> @e.pnl
+        </a>
+        <a href="https://www.tiktok.com/@enzo.panuela" target="_blank" rel="noopener" class="handle">
+          <span class="platform">TikTok</span> @enzo.panuela
+        </a>
       </div>
       <div class="hero-cta">
         <a class="cta" href="#resume">Voir la stratégie</a>
@@ -258,30 +269,30 @@ footer{padding:36px 20px;text-align:center;color:var(--soft);font-size:13px;bord
     <div class="cover-box">
       <div class="small">Comptes de référence</div>
       <div class="mockfeed">
-        <div class="tile">
+        <a href="https://www.instagram.com/jonanthonyjames" target="_blank" rel="noopener" class="tile">
           <div class="t-label">Inspi visuelle</div>
           <div class="t-handle"><span>@jonanthony</span>james</div>
-        </div>
-        <div class="tile">
+        </a>
+        <a href="https://www.instagram.com/chrisbizet" target="_blank" rel="noopener" class="tile">
           <div class="t-label">Cinéma &amp; voyage</div>
           <div class="t-handle"><span>@chris</span>bizet</div>
-        </div>
-        <div class="tile">
+        </a>
+        <a href="https://www.instagram.com/mylittlefranceaustralie" target="_blank" rel="noopener" class="tile">
           <div class="t-label">PVT France</div>
           <div class="t-handle"><span>@mylittle</span>france.au</div>
-        </div>
-        <div class="tile">
+        </a>
+        <a href="https://www.instagram.com/departaustralie" target="_blank" rel="noopener" class="tile">
           <div class="t-label">Backpacker FR</div>
           <div class="t-handle"><span>@depart</span>australie</div>
-        </div>
-        <div class="tile">
+        </a>
+        <a href="https://www.instagram.com/e.pnl" target="_blank" rel="noopener" class="tile">
           <div class="t-label">Instagram client</div>
           <div class="t-handle"><span>@e</span>.pnl</div>
-        </div>
-        <div class="tile">
+        </a>
+        <a href="https://www.tiktok.com/@enzo.panuela" target="_blank" rel="noopener" class="tile">
           <div class="t-label">TikTok client</div>
           <div class="t-handle"><span>@enzo</span>.panuela</div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -383,12 +394,12 @@ footer{padding:36px 20px;text-align:center;color:var(--soft);font-size:13px;bord
     </div>
     <div class="tbl-wrap">
       <table>
-        <thead><tr><td>Compte / Type</td><td>Ce qu'il fait bien</td><td>Leçon pour Enzo</td></tr></thead>
+        <thead><tr><td>Compte</td><td>Ce qu'il fait bien</td><td>Leçon pour Enzo</td></tr></thead>
         <tbody>
-          <tr><td>@jonanthonyjames</td><td>Met l'accent sur l'émotion et le "feeling of being there".</td><td>Chercher l'expérience ressentie, pas seulement la beauté du lieu.</td></tr>
-          <tr><td>@chrisbizet</td><td>Voyage filmé de manière simple, honnête et très cinématique.</td><td>Garder un ton vrai, sans surjouer la performance créateur.</td></tr>
-          <tr><td>@mylittlefranceaustralie</td><td>Aide à préparer le départ, répond à des questions PVT concrètes.</td><td>Ajouter de la valeur pratique dans certains contenus.</td></tr>
-          <tr><td>@departaustralie</td><td>Positionnement utile, orienté problématiques backpackers.</td><td>Ne pas rester uniquement esthétique ; donner aussi des repères terrain.</td></tr>
+          <tr><td><a href="https://www.instagram.com/jonanthonyjames" target="_blank" rel="noopener" class="alink">@jonanthonyjames</a></td><td>Met l'accent sur l'émotion et le "feeling of being there".</td><td>Chercher l'expérience ressentie, pas seulement la beauté du lieu.</td></tr>
+          <tr><td><a href="https://www.instagram.com/chrisbizet" target="_blank" rel="noopener" class="alink">@chrisbizet</a></td><td>Voyage filmé de manière simple, honnête et très cinématique.</td><td>Garder un ton vrai, sans surjouer la performance créateur.</td></tr>
+          <tr><td><a href="https://www.instagram.com/mylittlefranceaustralie" target="_blank" rel="noopener" class="alink">@mylittlefranceaustralie</a></td><td>Aide à préparer le départ, répond à des questions PVT concrètes.</td><td>Ajouter de la valeur pratique dans certains contenus.</td></tr>
+          <tr><td><a href="https://www.instagram.com/departaustralie" target="_blank" rel="noopener" class="alink">@departaustralie</a></td><td>Positionnement utile, orienté problématiques backpackers.</td><td>Ne pas rester uniquement esthétique ; donner aussi des repères terrain.</td></tr>
         </tbody>
       </table>
     </div>
@@ -572,10 +583,14 @@ footer{padding:36px 20px;text-align:center;color:var(--soft);font-size:13px;bord
 </section>
 
 <footer>
-  <div class="brand" style="display:inline-flex;margin-bottom:10px">@nobleedge.agency</div>
+  <a href="https://www.instagram.com/nobleedge.agency" target="_blank" rel="noopener" class="brand" style="display:inline-flex;margin-bottom:10px">@nobleedge.agency</a>
   <div class="footer-handles">
-    <div class="handle"><span class="platform">Instagram</span> @e.pnl</div>
-    <div class="handle"><span class="platform">TikTok</span> @enzo.panuela</div>
+    <a href="https://www.instagram.com/e.pnl" target="_blank" rel="noopener" class="handle">
+      <span class="platform">Instagram</span> @e.pnl
+    </a>
+    <a href="https://www.tiktok.com/@enzo.panuela" target="_blank" rel="noopener" class="handle">
+      <span class="platform">TikTok</span> @enzo.panuela
+    </a>
   </div>
   30-Day Content Growth Plan · Enzo Panuela
 </footer>
